@@ -2,9 +2,8 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="UserMapper">
- <select id="selectUser" parameterType="String" resultType="dto.userDTO">
-  select *
-  from users where id = #{id}
+<mapper namespace="myBatis.mapper.UserMapper">
+ <select id="selectUser" parameterType="String" resultType="dto.UserDTO">
+  select * from users where id = #{id}
  </select>
 </mapper>

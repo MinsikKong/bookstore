@@ -5,13 +5,12 @@ import java.io.Reader;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-
 public class MyBatisManager{
 	public static SqlSessionFactory sqlMapper = null;
 	    public static SqlSessionFactory getInstance(){
 	        if(sqlMapper == null) {
 	        	try{
-				  String resource = "./mybatisConf.xml";
+				  String resource = "myBatis/mybatisConf.xml";
 				  Reader reader = Resources.getResourceAsReader(resource);
 				  sqlMapper = new SqlSessionFactoryBuilder().build(reader);
 				  reader.close();

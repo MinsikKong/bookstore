@@ -13,7 +13,9 @@ public class UserDAO {
 	public UserDTO getUsers(){
 	
 	  SqlSession session = sqlMapper.openSession();
-	  UserDTO users = session.selectOne("myBatis.UserMapper.selectUser", "dkfdnd");
+	  
+	  //selectOne - call nameSpace of Mapper
+	  UserDTO users = session.selectOne("myBatis.mapper.UserMapper.selectUser", "dkfdnd");
 	return users;
 	}
 }
