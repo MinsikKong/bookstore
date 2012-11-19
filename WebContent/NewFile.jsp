@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%@ page import = "test.test" %>
+<%@ page import = "controller.Controller" %>
 <%@ page import = "dto.UserDTO" %>
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,7 @@
 </head>
 <body>
 <%
-		test test1 = new test();
+		Controller test1 = new Controller();
 		UserDTO dto = test1.getUser();
 		System.out.println(test1);
 		System.out.println(dto);

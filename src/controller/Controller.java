@@ -1,17 +1,17 @@
-package test;
+package controller;
 
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.UserDAO;
+import logic.BusinessLogic;
 import dto.UserDTO;
 
-public class test extends HttpServlet {
+public class Controller extends HttpServlet {
 	public UserDTO getUser() {
-		UserDAO dao = new UserDAO();
-		UserDTO list = dao.getUsers();
+		BusinessLogic bLogic = new BusinessLogic();
+		UserDTO list =  bLogic.getUser();
 		return list;
 	}
 	

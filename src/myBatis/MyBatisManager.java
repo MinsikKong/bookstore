@@ -1,4 +1,4 @@
-package test;
+package myBatis;
 
 import java.io.Reader;
 
@@ -11,7 +11,7 @@ public class MyBatisManager{
 	    public static SqlSessionFactory getInstance(){
 	        if(sqlMapper == null) {
 	        	try{
-				  String resource = "mybatisConf.xml";
+				  String resource = "./mybatisConf.xml";
 				  Reader reader = Resources.getResourceAsReader(resource);
 				  sqlMapper = new SqlSessionFactoryBuilder().build(reader);
 				  reader.close();
