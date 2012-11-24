@@ -5,9 +5,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
-<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../js/jquery-1.8.3.min.js"></script>
+<link href="/book/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script type="text/javascript" src="/book/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/book/js/bootstrap.min.js"></script>
 
 </head>
 <body>
