@@ -5,7 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	<jsp:include page="/pages/common/scriptHeaders.jsp" />
+
+<link href="/book/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="/book/css/blog.css" rel="stylesheet">
+<script type="text/javascript" src="/book/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/book/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
@@ -19,10 +24,9 @@
 
 		<div class="row-fluid">
 			<div class="span2">
-				<!--Sidebar content-->
 
+				<!--Sidebar content-->
 				<jsp:include page="/pages/blog/blogBasicInfo.jsp" />
-				
 			</div>
 
 			<!--Body content-->
@@ -30,19 +34,19 @@
 
 				<!-- RightTop -->
 				<div>
-
-					<!-- Right Top 2-1 -->
-					<div>현재 판매중인 도서, 우측 상단 더 보기 아이콘 존재</div>
-
-					<!-- Right Top 2-2 -->
-					<div>사용자게시물에 달린 댓글 우측 상단 더 보기 아이콘 존재</div>
+					<div>총 구매 내역 표시. 옆에 환불 버튼 표시</div>
+					<div>총 구매내역의 가격 표시</div>
 				</div>
 
 				<!-- Right bottom -->
-				<div>사용자 게시물에 달린 후기 우측 상단 더 보기 아이콘 존재</div>
+				<div>
+					<div>총 판매 내역 표시</div>
+					<div>총 판매 내역의 가격 표시</div>
+				</div>
 			</div>
 		</div>
 	</div>
+
 
 	<!-- include footer -->
 	<jsp:include page="/pages/common/footer.jsp" />

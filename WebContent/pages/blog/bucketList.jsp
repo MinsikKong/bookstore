@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,20 +25,19 @@
 			</div>
 
 			<!--Body content-->
-			<div class="span10 ">
+			<div class="span10">
 
 				<!-- RightTop -->
 				<div>
+현재 장바구니에 담아둔 품목과 금액 을 표시. 맨 오른편에 삭제버튼표시
+     맨 왼편에 체크박스를 달아 체크한 것만 별도로 구매 가능하게 함.
+     도서를 클릭하면 도서 정보페이지로 이동
 
-					<!-- Right Top 2-1 -->
-					<div>현재 판매중인 도서, 우측 상단 더 보기 아이콘 존재</div>
-
-					<!-- Right Top 2-2 -->
-					<div>사용자게시물에 달린 댓글 우측 상단 더 보기 아이콘 존재</div>
 				</div>
 
 				<!-- Right bottom -->
-				<div>사용자 게시물에 달린 후기 우측 상단 더 보기 아이콘 존재</div>
+				<div>⑥총 장바구니 품목의 합계를 표시
+				</div>
 			</div>
 		</div>
 	</div>

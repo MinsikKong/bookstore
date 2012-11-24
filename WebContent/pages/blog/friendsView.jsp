@@ -1,11 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	<jsp:include page="/pages/common/scriptHeaders.jsp" />
+<jsp:include page="/pages/common/scriptHeaders.jsp" />
 </head>
 <body>
 
@@ -26,20 +25,22 @@
 			</div>
 
 			<!--Body content-->
-			<div class="span10 ">
+			<div class="span10">
 
 				<!-- RightTop -->
 				<div>
+사용자에게 친구 요청한 
+    사용자의 목록
+    ( 수락, 거부 버튼)
+    ( ID 클릭시 해당 사용자 
+      블로그로 이동)
 
-					<!-- Right Top 2-1 -->
-					<div>현재 판매중인 도서, 우측 상단 더 보기 아이콘 존재</div>
-
-					<!-- Right Top 2-2 -->
-					<div>사용자게시물에 달린 댓글 우측 상단 더 보기 아이콘 존재</div>
 				</div>
 
 				<!-- Right bottom -->
-				<div>사용자 게시물에 달린 후기 우측 상단 더 보기 아이콘 존재</div>
+				<div>현재 친구 목록
+    (오른쪽에 삭제 버튼
+				</div>
 			</div>
 		</div>
 	</div>
