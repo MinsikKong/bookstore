@@ -3,8 +3,11 @@
 <%
 	String[][] menu = { { "#", "Home" },
 			{ "/book/pages/blog/blogMain.jsp", "Blog" },
-			{ "#", "Menu1" }, { "#", "Menu2" }, { "#", "Menu3" },
-			{ "#", "Menu4" }, { "#", "Menu5" } };
+			{ "#", "Menu1" },
+			{ "#", "Menu2" },
+			{ "#", "Menu3" },
+			{ "#", "Menu4" },
+			{ "#", "Menu5" } };
 	String currentMenu = request.getParameter("current");
 %>
 <div class="header_top">
