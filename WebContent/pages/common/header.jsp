@@ -7,9 +7,7 @@
 			{ "#", "Menu4" }, { "#", "Menu5" } };
 	String currentMenu = request.getParameter("current");
 %>
-<div class="header_top">
-로그인ㅣ회원가입
-</div>
+<div class="header_top">로그인ㅣ회원가입</div>
 <div class="container">
 	<h1>SNS 중고서점 TITLE</h1>
 </div>
@@ -37,9 +35,11 @@
 				</ul>
 			</div>
 			<div>
-				<form class="navbar-search pull-left">
-					<input type="text" class="search-query" placeholder="Search" name="searchValue">
-					<input type="submit" class="btn btn-info" value="검색" />
+				<form class="navbar-search pull-left"
+					action="/book/pages/search/searchResult.jsp">
+					<input type="text" class="search-query" placeholder="Search"
+						name="searchValue"> <input type="submit"
+						class="btn btn-info" value="검색" />
 				</form>
 			</div>
 		</div>

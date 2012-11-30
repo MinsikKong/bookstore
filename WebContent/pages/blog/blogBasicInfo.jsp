@@ -13,7 +13,7 @@
 
 <div class="blog-category">
 	<ul>
-	<!-- 상대경로 쓰면 안됨 -->
+		<!-- 상대경로 쓰면 안됨 -->
 		<li><a href="/book/pages/trade/tradeView.jsp">판매/구매 내역조회 </a></li>
 		<li><a href="/book/pages/blog/bucketList.jsp">장바구니</a></li>
 		<li><a href="/book/pages/blog/friendsView.jsp">친구관리</a></li>
