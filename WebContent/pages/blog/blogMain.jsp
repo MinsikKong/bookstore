@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	<jsp:include page="/pages/common/scriptHeaders.jsp" />
+<jsp:include page="/pages/common/scriptHeaders.jsp" />
 </head>
 <body>
 
@@ -22,7 +22,7 @@
 				<!--Sidebar content-->
 
 				<jsp:include page="/pages/blog/blogBasicInfo.jsp" />
-				
+
 			</div>
 
 			<!--Body content-->

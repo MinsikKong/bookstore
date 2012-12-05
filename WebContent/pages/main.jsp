@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head> 
+<head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <jsp:include page="/pages/common/scriptHeaders.jsp" />
@@ -79,7 +79,7 @@
 						</div>
 					</li>
 				</ul>
-				
+
 				<ul class="thumbnails">
 					<li class="span4">
 						<div class="thumbnail">

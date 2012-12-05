@@ -114,14 +114,15 @@
 							<textarea rows="5" cols="30" name="contents"></textarea>
 						</div>
 					</div>
-					
+
 					<div class="control-group">
-							<label class="control-label" for="inputPassword">Password</label>
-							<div class="controls">
-								<input type="password" name="inputPassword" placeholder="Password">
-							</div>
+						<label class="control-label" for="inputPassword">Password</label>
+						<div class="controls">
+							<input type="password" name="inputPassword"
+								placeholder="Password">
 						</div>
-						
+					</div>
+
 					<div class="control-group">
 						<div class="controls">
 							<label class="checkbox"> <input type="checkbox">
