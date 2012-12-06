@@ -4,3 +4,4 @@
 <link href="/book/css/search.css" rel="stylesheet">
 <script type="text/javascript" src="/book/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="/book/js/bootstrap.js"></script>
+<script type="text/javascript" src="/book/js/jquery.autoellipsis-1.0.10.min.js"></script>

@@ -11,7 +11,7 @@
 
 	<!-- include header -->
 	<jsp:include page="/pages/common/header.jsp">
-		<jsp:param value="Home" name="current" />
+		<jsp:param value="Blog" name="current" />
 	</jsp:include>
 
 	<!-- contents div -->

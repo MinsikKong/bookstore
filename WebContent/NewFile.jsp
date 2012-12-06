@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%@ page import="controller.Controller"%>
+<%@ page import="servlet.BlogServlet"%>
 <%@ page import="dto.UserDTO"%>
 <!DOCTYPE html>
 <html>
@@ -11,11 +11,11 @@
 </head>
 <body>
 	<%
-		Controller test1 = new Controller();
-		UserDTO dto = test1.getUser();
-		System.out.println(test1);
-		System.out.println(dto);
-		System.out.println(dto.getId());
+		BlogServlet test1 = new BlogServlet();
+			UserDTO dto = test1.getUser();
+			System.out.println(test1);
+			System.out.println(dto);
+			System.out.println(dto.getId());
 	%>
 </body>
 </html>
