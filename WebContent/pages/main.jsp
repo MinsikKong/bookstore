@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,11 +108,11 @@
 
 			<!--right content-->
 			<div class="span2">
-				<div>
+				<div class="well">
 					<div>dkfdnd님 환영합니다.</div>
 					<div>
-						<ul>
-							<li><a href="/book/pages/blog/blogMain.jsp">내 블로그 가기</a></li>
+						<ul class="nav nav-list">
+							<li><a href="/book/blog">내 블로그 가기</a></li>
 							<li>개인정보 수정</li>
 							<li>로그 아웃</li>
 						</ul>
@@ -119,7 +120,7 @@
 
 				</div>
 
-				<div>최신 댓글이 표시됩니다.</div>
+				<div class="well">최신 댓글이 표시됩니다.</div>
 			</div>
 		</div>
 	</div>

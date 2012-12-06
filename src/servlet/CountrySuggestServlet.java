@@ -1,4 +1,4 @@
-package controller;
+package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -211,7 +211,6 @@ public class CountrySuggestServlet extends HttpServlet{
 		response.setContentType("text/html");
 		String query = request.getParameter("query");
 		PrintWriter out = response.getWriter();
-		PrintWriter out2 = response.getWriter();
 		if( query == null){
 			out.println("<div>Cannot access</div>");
 		}else{

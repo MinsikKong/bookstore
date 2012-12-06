@@ -1,4 +1,4 @@
-package controller;
+package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,14 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
  
-@WebServlet(asyncSupported = false, name = "HelloAnnotationServlet", urlPatterns = {"/hello"},
-initParams = {@WebInitParam(name="param1", value="value1"), @WebInitParam(name="param2", value="value2")}
-)
-public class ServletTest extends HttpServlet {
- 
-	/**
-	 * 
-	 */
+@WebServlet("/main")
+public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override

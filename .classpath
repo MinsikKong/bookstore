@@ -9,13 +9,18 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0"/>
-	<classpathentry kind="lib" path="C:/Users/Minsik/Documents/GitHub/libBox/mybatis-3.1.1/lib/asm-3.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Minsik/Documents/GitHub/libBox/mybatis-3.1.1/lib/cglib-2.2.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Minsik/Documents/GitHub/libBox/mybatis-3.1.1/lib/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Minsik/Documents/GitHub/libBox/mybatis-3.1.1/lib/log4j-1.2.16.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Minsik/Documents/GitHub/libBox/mybatis-3.1.1/mybatis-3.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Minsik/Documents/GitHub/libBox/mysql-connector-java-5.1.22/mysql-connector-java-5.1.22-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Minsik/Documents/GitHub/libBox/mybatis-3.1.1/lib/slf4j-api-1.6.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Minsik/Documents/GitHub/libBox/mybatis-3.1.1/lib/slf4j-log4j12-1.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/GitHub/bookstore/WebContent/WEB-INF/lib/asm-3.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/GitHub/bookstore/WebContent/WEB-INF/lib/cglib-2.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/GitHub/bookstore/WebContent/WEB-INF/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/GitHub/bookstore/WebContent/WEB-INF/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/GitHub/bookstore/WebContent/WEB-INF/lib/mybatis-3.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/GitHub/bookstore/WebContent/WEB-INF/lib/mysql-connector-java-5.1.22-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/GitHub/bookstore/WebContent/WEB-INF/lib/slf4j-api-1.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/GitHub/bookstore/WebContent/WEB-INF/lib/slf4j-log4j12-1.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/GitHub/bookstore/WebContent/WEB-INF/lib/javax.servlet.jsp.jstl-1.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/GitHub/bookstore/WebContent/WEB-INF/lib/javax.servlet.jsp.jstl-api-1.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/GitHub/bookstore/WebContent/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/GitHub/bookstore/WebContent/WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/GitHub/bookstore/WebContent/WEB-INF/lib/restfb-1.6.11.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
