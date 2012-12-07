@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import util.ChangeUtil;
+import dao.TradeDAO;
+import dto.PurchaseDTO;
 
 @WebServlet("/trade")
 public class TradeServlet extends HttpServlet{
@@ -45,9 +47,31 @@ public class TradeServlet extends HttpServlet{
 		String op = "";
 		String actionUrl = "";
 		try {
+			PurchaseDTO pDto = new PurchaseDTO(); 
 			op = ChangeUtil.getStringParameter(request.getParameter("op"),"");
 			if(op.equals("purchaseView")){
 				actionUrl = "pages/trade/purchaseView.jsp";
+			}else if(op.equals("purchase")){
+				request.setCharacterEncoding("utf-8");
+				
+				String name = ChangeUtil.getStringParameter(request.getParameter("name"),"empty");
+				String postalcode = ChangeUtil.getStringParameter(request.getParameter("postalcode"),"empty");
+				String addressline1 = ChangeUtil.getStringParameter(request.getParameter("addressline1"),"empty");
+				String addressline2 = ChangeUtil.getStringParameter(request.getParameter("addressline2"),"empty");
+				String phoneNumber = ChangeUtil.getStringParameter(request.getParameter("phoneNumber"),"empty");
+				String cardNumber = ChangeUtil.getStringParameter(request.getParameter("cardNumber"),"empty");
+				pDto.setName(name);
+				pDto.setPostalcode(postalcode);
+				pDto.setAddressline1(addressline1);
+				pDto.setAddressline2(addressline2);
+				pDto.setPhoneNumber(phoneNumber);
+				pDto.setCardNumber(cardNumber);
+				
+				if(TradeDAO.purchaseBook(pDto)>0){
+					System.out.println("성공!");
+				}else{
+					System.out.println("실패!");
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

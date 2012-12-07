@@ -57,41 +57,41 @@
 						</div>
 					</div>
 				</div>
-				<form class="form-horizontal">
+				<form class="form-horizontal" name="purchaseForm" method="post" action = "/book/trade?op=purchase">
 					<div class="shipping_info">
 						<h2>배송정보</h2>
 
 						<div class="control-group">
-							<label class="control-label" for="inputName">이름</label>
+							<label class="control-label" for="name">이름</label>
 							<div class="controls">
-								<input type="text" id="inputName" placeholder="Name">
+								<input type="text" name="name" placeholder="이름">
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="inputPostalcode">우편번호</label>
+							<label class="control-label" for="postalcode">우편번호</label>
 							<div class="controls">
-								<input type="text" id="inputPostalcode" placeholder="Postalcode">
+								<input type="text" name="postalcode" placeholder="Postalcode">
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="inputAddressline1">주소</label>
+							<label class="control-label" for="addressline1">주소</label>
 							<div class="controls">
-								<input type="text" id="inputAddressline1"
-									placeholder="Addlessline1">
+								<input type="text" name="addressline1"
+									placeholder="주소">
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="inputAddressline2">상세주소</label>
+							<label class="control-label" for="addressline2">상세주소</label>
 							<div class="controls">
-								<input type="text" id="inputAddressline1"
-									placeholder="Addlessline2">
+								<input type="text" name="addressline2"
+									placeholder="상세주소">
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="inputPhonenumber">연락처</label>
+							<label class="control-label" for="phoneNumber">연락처</label>
 							<div class="controls">
-								<input type="text" id="inputPhonenumber"
-									placeholder="Phonenumber">
+								<input type="text" name="phoneNumber"
+									placeholder="연락처">
 							</div>
 						</div>
 					</div>
@@ -100,9 +100,9 @@
 						<h2>결제정보</h2>
 
 						<div class="control-group">
-							<label class="control-label" for="inputCardnunber">카드번호</label>
+							<label class="control-label" for="cardNumber">카드번호</label>
 							<div class="controls">
-								<input type="text" id="inputCardnunber" placeholder="Name">
+								<input type="text" name="cardNumber" placeholder="Name">
 							</div>
 						</div>
 					</div>
@@ -112,10 +112,11 @@
 							<h2>총 가격 : 10000원</h2>
 						</div>
 						<div>
-							<button type="submit" class="btn btn-primary">구매하기</button>
-							<button type="submit" class="btn">안사</button>
+							<a href="#" data-action="input-data" class="btn btn-large btn-primary ">구매하기</a>
 						</div>
 					</div>
+					<input type="hidden" name="articeIdx" value="" />
+					<input type="hidden" name="buyerId" value="" />
 				</form>
 			</div>
 
@@ -143,8 +144,48 @@
 </body>
 <script type="text/javascript">
 	$(document).ready(function() {
+		
 		$(".contentsLine").ellipsis();
 		$(".contentsLine2").ellipsis();
+		
+		$("a[data-action='input-data']").click(function() {
+			
+			form = document.purchaseForm;
+			if (form.name.value == '') {
+				alert("이름을 입력하세요");
+				form.name.focus();
+				return;
+			}
+			if (form.postalcode.value == '') {
+				alert("우편번호를 입력하세요");
+				form.postalcode.focus();
+				return;
+			}
+			if (form.addressline1.value == '') {
+				alert("주소를 입력하세요");
+				form.addressline1.focus();
+				return;
+			}
+			if (form.addressline2.value == '') {
+				alert("상세주소를 입력하세요");
+				form.addressline2.focus();
+				return;
+			}
+			if (form.phoneNumber.value == '') {
+				alert("연락처를 입력하세요");
+				form.phoneNumber.focus();
+				return;
+			}
+			if (form.cardNumber.value == '') {
+				alert("카드번호를 입력하세요");
+				form.cardNumber.focus();
+				return;
+			}
+			if (confirm("내용을 전송하시겠습니까?")) {
+				form.submit();
+			}
+		});
 	});
+	
 </script>
 </html>

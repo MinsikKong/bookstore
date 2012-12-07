@@ -10,7 +10,7 @@
 <div class="header_top"></div>
 <!-- Navbar
   ================================================== -->
-<div class="navbar">
+<div class="navbar ">
 	<div class="navbar-inner">
 		<div class="container">
 			<a class="brand" href="/book/pages/main.jsp">BOOK</a>
@@ -33,7 +33,7 @@
 			</div>
 			<div>
 				<form class="navbar-form pull-left"
-					action="/book/search?op=searchView" name="searchForm" method="post">
+					action="/book/user?op=searchView" name="searchForm" method="post">
 					<input type="text" class="span2 search-query" name="searchValue"
 						placeholder="검색어" />
 					<!-- <button type="submit" class="btn btn-info">검색</button> -->

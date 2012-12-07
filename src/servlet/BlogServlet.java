@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import logic.BusinessLogic;
+import dao.UserDAO;
 import dto.UserDTO;
 
 @WebServlet("/blog")
@@ -19,7 +20,8 @@ public class BlogServlet extends HttpServlet {
 
 	public UserDTO getUser() {
 		BusinessLogic bLogic = new BusinessLogic();
-		UserDTO list = bLogic.getUser();
+		String value = "";
+		UserDTO list = bLogic.getUser(value);
 		return list;
 	}
 
@@ -30,6 +32,8 @@ public class BlogServlet extends HttpServlet {
 		try {
 			if(op.equals("main")||op.equals("")){
 				actionUrl = "pages/blog/blogMain.jsp";
+				String searchValue = request.getParameter("searchValue");
+				UserDAO.getUsers(searchValue);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

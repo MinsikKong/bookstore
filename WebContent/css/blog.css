@@ -1,55 +1,56 @@
 @CHARSET "UTF-8";
 
-.header_top{
-	text-align:right;
-	font-weight:bold;
+.header_top {
+	text-align: right;
+	font-weight: bold;
 }
-.right_align{
-	text-align:right;
+
+.right_align {
+	text-align: right;
 }
-.marginBottom{
+
+.marginBottom {
 	margin-bottom: 45px;
 }
-.marginTOP{
+
+.marginTOP {
 	margin-top: 5px;
 }
 
+.paddingTOP{
+	padding-top: 5px;
+}
 /*바로 밑의 자식들만 먹음 '>'*/
-.articleFloat>div{
-	float:left;
-}
-.only_child_float>div{
-	float:left;
-}
-.contentsSpace{
-	height :150px;
-}
-.contentsLine2{
-	height :150px;
-}
-.detail_contentsSpace{
-	height :350px;
+.articleFloat>div {
+	float: left;
 }
 
-.sellerView_contentsSpace{
-	width : 600px;
-	height :30px;
-	
-	
-	
+.contentsSpace {
+	height: 150px;
+}
+
+.contentsLine2 {
+	height: 150px;
+}
+
+.detail_contentsSpace {
+	height: 350px;
+}
+
+.sellerView_contentsSpace {
+	height: 30px;
 	/*권능을 막는 스타일 영어를 이김*/
-	word-wrap:break-word;
-	
-}
-.img_size{
-	width : 200px;
+	word-wrap: break-word;
 }
 
-.detail_img_size{
-	width : 500px;
-	
+.img_size {
+	width: 200px;
 }
 
-.float_style{
-	float:left;
+.detail_img_size {
+	width: 500px;
+}
+
+.float_style {
+	float: left;
 }

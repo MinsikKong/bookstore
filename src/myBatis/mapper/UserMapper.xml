@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="myBatis.mapper.UserMapper">
+<mapper namespace="UserMapper">
  <select id="selectUser" parameterType="String" resultType="dto.UserDTO">
-  select * from users where id = #{id}
+  select id from user_info where id = #{searchValue}
  </select>
 </mapper>
