@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-=======
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
->>>>>>> a3b16860af49bbdeaaf8a6e2bb10a229132416a3
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,38 +23,25 @@
 				<!--Sidebar content-->
 
 				<jsp:include page="/pages/blog/blogBasicInfo.jsp" />
-<<<<<<< HEAD
-
-=======
-				
->>>>>>> a3b16860af49bbdeaaf8a6e2bb10a229132416a3
 			</div>
 
 			<!--Body content-->
 			<div class="span10">
 
 				<!-- RightTop -->
-<<<<<<< HEAD
 				<div>사용자에게 친구 요청한 사용자의 목록 ( 수락, 거부 버튼) ( ID 클릭시 해당 사용자 블로그로
 					이동)</div>
 
 				<!-- Right bottom -->
-				<div>현재 친구 목록 (오른쪽에 삭제 버튼</div>
-=======
-				<div>
-사용자에게 친구 요청한 
-    사용자의 목록
-    ( 수락, 거부 버튼)
-    ( ID 클릭시 해당 사용자 
-      블로그로 이동)
+				<!-- 현재 친구 목록 -->
+				<c:forEach begin="1" end="2" step="1">
+					<div>
 
-				</div>
+						<a href="#" 공민식
+						<button class="btn btn-danger" type="button">삭제</button>
 
-				<!-- Right bottom -->
-				<div>현재 친구 목록
-    (오른쪽에 삭제 버튼
-				</div>
->>>>>>> a3b16860af49bbdeaaf8a6e2bb10a229132416a3
+					</div>
+				</c:forEach>
 			</div>
 		</div>
 	</div>

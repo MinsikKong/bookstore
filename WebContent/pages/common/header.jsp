@@ -7,10 +7,7 @@
 	{ "#", "Menu4" }, { "#", "Menu5" } };
 	String currentMenu = request.getParameter("current");
 %>
-<div class="header_top">로그인ㅣ회원가입</div>
-<div class="container">
-	<h1>SNS 중고서점 TITLE</h1>
-</div>
+<div class="header_top"></div>
 <!-- Navbar
   ================================================== -->
 <div class="navbar">
@@ -21,16 +18,16 @@
 				<ul class="nav">
 					<%
 						for (String[] menuItem : menu) {
-																if (currentMenu != null && currentMenu.equals(menuItem[1])) {
-																	out.println("<li class='active'>");
-																} else {
-																	out.println("<li class=''>");
-																}
+																			if (currentMenu != null && currentMenu.equals(menuItem[1])) {
+																				out.println("<li class='active'>");
+																			} else {
+																				out.println("<li class=''>");
+																			}
 
-																out.println("<a href='" + menuItem[0] + "'>" + menuItem[1]
-																		+ "</a>");
-																out.println("</li>");
-															}
+																			out.println("<a href='" + menuItem[0] + "'>" + menuItem[1]
+																					+ "</a>");
+																			out.println("</li>");
+																		}
 					%>
 				</ul>
 			</div>
@@ -41,6 +38,15 @@
 						placeholder="검색어" />
 					<!-- <button type="submit" class="btn btn-info">검색</button> -->
 					<a href="#" data-action="search-data" class="btn btn-info">검색</a>
+				</form>
+			</div>
+			<div>
+				<form class="navbar-form pull-right">
+					<!-- Facebook 접속 버튼 -->
+					<a class="fb_button fb_button_large marginTOP	" id="btnLogin"
+						href="FBAuthServlet.do" data-size="xlarge"> <span
+						class="fb_button_text"> Log In</span>
+					</a>
 				</form>
 			</div>
 		</div>

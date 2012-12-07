@@ -5,8 +5,9 @@
 	font-weight:bold;
 	font-weight:bold;
 }
-
-
+.right_align{
+	text-align:right;
+}
 .marginBottom{
 	margin-bottom: 45px;
 }
@@ -16,6 +17,9 @@
 
 /*바로 밑의 자식들만 먹음 '>'*/
 .articleFloat>div{
+	float:left;
+}
+.only_child_float>div{
 	float:left;
 }
 .contentsSpace{
@@ -29,6 +33,7 @@
 }
 
 .sellerView_contentsSpace{
+	width : 600px;
 	height :30px;
 	
 	
