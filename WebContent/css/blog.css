@@ -16,6 +16,9 @@
 .articleFloat>div{
 	float:left;
 }
+.only_child_float>div{
+	float:left;
+}
 .contentsSpace{
 	height :150px;
 }
@@ -27,6 +30,7 @@
 }
 
 .sellerView_contentsSpace{
+	width : 600px;
 	height :30px;
 	
 	

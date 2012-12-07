@@ -45,8 +45,9 @@ public class TradeServlet extends HttpServlet{
 		String op = "";
 		String actionUrl = "";
 		try {
-			if(op.equals("main")||op.equals("")){
-				actionUrl = "pages/trade/blogMain.jsp";
+			op = ChangeUtil.getStringParameter(request.getParameter("op"),"");
+			if(op.equals("purchaseView")){
+				actionUrl = "pages/trade/purchaseView.jsp";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

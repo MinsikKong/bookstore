@@ -58,10 +58,6 @@
 							150height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 150height가 넘어가는 순간
 							자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청
 						</div>
-
-						<form action="purchaseView.jsp" method="get">
-							<button type="submit" class="btn btn-primary">구매하러가야됨</button>
-						</form>
 					</div>
 				</div>
 
@@ -69,13 +65,17 @@
 					<div>
 						<div class="float_style">판매자 : 김성모 상태 : A+ 가격 :
 							7000원&nbsp;&nbsp;&nbsp;&nbsp;</div>
-						<div class="contentsLine2 sellerView_contentsSpace">할말 :
-							50height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도50height가
-							넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도50height가 넘어가는 순간
-							자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도50height가 넘어가는 순간 자바스크립트를
-							통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도50height가 넘어가는 순간 자바스크립트를 통해 여행을
-							떠나고 말지요. 아무리 엄청난 내용을 써도</div>
-
+						<div class="contentsLine2 sellerView_contentsSpace float_style">할말
+							: 50height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을
+							써도50height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을
+							써도50height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을
+							써도50height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을
+							써도50height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도</div>
+						<div>
+							<form action="/book/trade?op=purchaseView" method="post">
+								<button type="submit" class="btn btn-primary">구매하러가야됨</button>
+							</form>
+						</div>
 					</div>
 				</c:forEach>
 			</div>

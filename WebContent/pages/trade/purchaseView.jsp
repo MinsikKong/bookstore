@@ -36,47 +36,30 @@
 				<!-- Right bottom -->
 
 				<div class="marginBottom">
-					<div>도서 정보</div>
+					<div>도서</div>
 					<div>
-						<div style="float: left;">
-							<img src="/book/img/trade/bookImg.jpg" alt="책이미지"
-								class="detail_img_size" />
+						<div class="float_style">
+							<img src="/book/img/trade/bookImg.jpg" alt="책이미지" class="img_size" />
 						</div>
-
-						<div class="contentsLine detail_contentsSpace">
-							<a href="/book/trade?op=sellerView">제목 : 공민식은 왜 웹프를 하지 않는가</a> <br />
-							저자 : 박현수 <br />
-							<DEL>판매가 : 10000원</DEL>
-							중고 최저가: 5000원<br /> 판매자수: 10명 <br /> 설명 : <br /> 써도 150height가
-							넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도 150height가 넘어가는 순간
-							자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도 150height가 넘어가는 순간 자바스크립트를
-							통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도 150height가 넘어가는 순간 자바스크립트를 통해 여행을
-							떠나고 말지요. 아무리 엄청난 내용을 써도 150height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고
-							말지요. 아무리 엄청난 내용을 써도 150height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요.
-							아무리 엄청난 내용을 써도 150height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난
-							내용을 써도 150height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도
-							150height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 150height가 넘어가는 순간
-							자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청
+						<div class="only_child_float contentsSpace">
+							<div>
+								<a href="/book/trade?op=sellerView">제목 : 공민식은 왜 웹프를 하지 않는가</a>
+							</div>
+							<div>저자 : 박현수</div>
+							
+							<!-- 정가는 디비에서 -->
+							<div>정가 : 10000원</div>
+							
+							<!-- 판매자가 올린 가격도 디비에서 -->
+							<div>판매가: 5000원</div>
+							
 						</div>
 					</div>
 				</div>
+				<form class="form-horizontal">
+					<div class="shipping_info">
+						<h2>배송정보</h2>
 
-
-				<div>
-					<div class="float_style">판매자 : 김성모 상태 : A+ 가격 :
-						7000원&nbsp;&nbsp;&nbsp;&nbsp;</div>
-					<div class="contentsLine2 sellerView_contentsSpace">할말 :
-						50height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도50height가
-						넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도50height가 넘어가는 순간
-						자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도50height가 넘어가는 순간 자바스크립트를 통해
-						여행을 떠나고 말지요. 아무리 엄청난 내용을 써도50height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고
-						말지요. 아무리 엄청난 내용을 써도</div>
-
-				</div>
-
-				<div class="shipping_info">
-					<h2>배송정보</h2>
-					<form class="form-horizontal">
 						<div class="control-group">
 							<label class="control-label" for="inputName">이름</label>
 							<div class="controls">
@@ -110,37 +93,26 @@
 									placeholder="Phonenumber">
 							</div>
 						</div>
-					</form>
-				</div>
+					</div>
 
-				<div class="payment_info">
-					<h2>결제정보</h2>
-					<form class="form-horizontal">
+					<div class="payment_info">
+						<h2>결제정보</h2>
+
 						<div class="control-group">
 							<label class="control-label" for="inputCardnunber">카드번호</label>
 							<div class="controls">
 								<input type="text" id="inputCardnunber" placeholder="Name">
 							</div>
 						</div>
-				</div>
+					</div>
 
-				<div class="price_info">
-					<h2>가격정보</h2>
-					총 얼마 나옴
-					<form action="purchaseConfirm.jsp" method="get">
+					<div class="price_info">
+						<h2>가격정보</h2>
+						총 얼마 나옴
 						<button type="submit" class="btn btn-primary">구매하기</button>
 						<button type="submit" class="btn">안사</button>
-					</form>
-
-
-
-				</div>
-
-				<div>
-					<br> <br> <br> <br> footer때문에 아래가 잘림 br같은거
-					넣어줘야됨 일단은 <br> <br> <br> <br>
-				</div>
-
+					</div>
+				</form>
 			</div>
 
 			<!-- 3 -->
