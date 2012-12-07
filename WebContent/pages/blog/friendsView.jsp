@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +33,15 @@
 					이동)</div>
 
 				<!-- Right bottom -->
-				<div>현재 친구 목록 (오른쪽에 삭제 버튼</div>
+				<!-- 현재 친구 목록 -->
+				<c:forEach begin="1" end="2" step="1">
+					<div>
+
+						<a href="#" 공민식
+						<button class="btn btn-danger" type="button">삭제</button>
+
+					</div>
+				</c:forEach>
 			</div>
 		</div>
 	</div>

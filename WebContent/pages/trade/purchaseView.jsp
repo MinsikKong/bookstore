@@ -39,20 +39,21 @@
 					<div>도서</div>
 					<div>
 						<div class="float_style">
-							<img src="/book/img/trade/bookImg.jpg" alt="책이미지" class="img_size" />
+							<img src="/book/img/trade/bookImg.jpg" alt="책이미지"
+								class="img_size" />
 						</div>
 						<div class="only_child_float contentsSpace">
 							<div>
 								<a href="/book/trade?op=sellerView">제목 : 공민식은 왜 웹프를 하지 않는가</a>
 							</div>
 							<div>저자 : 박현수</div>
-							
+
 							<!-- 정가는 디비에서 -->
 							<div>정가 : 10000원</div>
-							
+
 							<!-- 판매자가 올린 가격도 디비에서 -->
 							<div>판매가: 5000원</div>
-							
+
 						</div>
 					</div>
 				</div>
@@ -95,7 +96,7 @@
 						</div>
 					</div>
 
-					<div class="payment_info">
+					<div class="payment_info float_style">
 						<h2>결제정보</h2>
 
 						<div class="control-group">
@@ -106,11 +107,14 @@
 						</div>
 					</div>
 
-					<div class="price_info">
-						<h2>가격정보</h2>
-						총 얼마 나옴
-						<button type="submit" class="btn btn-primary">구매하기</button>
-						<button type="submit" class="btn">안사</button>
+					<div class="price_info right_align">
+						<div>
+							<h2>총 가격 : 10000원</h2>
+						</div>
+						<div>
+							<button type="submit" class="btn btn-primary">구매하기</button>
+							<button type="submit" class="btn">안사</button>
+						</div>
 					</div>
 				</form>
 			</div>
