@@ -58,26 +58,89 @@
 							150height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 150height가 넘어가는 순간
 							자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청
 						</div>
-
-						<form action="purchaseView.jsp" method="get">
-							<button type="submit" class="btn btn-primary">구매하러가야됨</button>
-						</form>
 					</div>
 				</div>
 
-				<c:forEach begin="1" end="4" step="1">
-					<div>
-						<div class="float_style">판매자 : 김성모 상태 : A+ 가격 :
-							7000원&nbsp;&nbsp;&nbsp;&nbsp;</div>
-						<div class="contentsLine2 sellerView_contentsSpace">할말 :
-							50height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도50height가
-							넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도50height가 넘어가는 순간
-							자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도50height가 넘어가는 순간 자바스크립트를
-							통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도50height가 넘어가는 순간 자바스크립트를 통해 여행을
-							떠나고 말지요. 아무리 엄청난 내용을 써도</div>
 
-					</div>
-				</c:forEach>
+				<div>
+					<div class="float_style">판매자 : 김성모 상태 : A+ 가격 :
+						7000원&nbsp;&nbsp;&nbsp;&nbsp;</div>
+					<div class="contentsLine2 sellerView_contentsSpace">할말 :
+						50height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도50height가
+						넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도50height가 넘어가는 순간
+						자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도50height가 넘어가는 순간 자바스크립트를 통해
+						여행을 떠나고 말지요. 아무리 엄청난 내용을 써도50height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고
+						말지요. 아무리 엄청난 내용을 써도</div>
+
+				</div>
+
+				<div class="shipping_info">
+					<h2>배송정보</h2>
+					<form class="form-horizontal">
+						<div class="control-group">
+							<label class="control-label" for="inputName">이름</label>
+							<div class="controls">
+								<input type="text" id="inputName" placeholder="Name">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="inputPostalcode">우편번호</label>
+							<div class="controls">
+								<input type="text" id="inputPostalcode" placeholder="Postalcode">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="inputAddressline1">주소</label>
+							<div class="controls">
+								<input type="text" id="inputAddressline1"
+									placeholder="Addlessline1">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="inputAddressline2">상세주소</label>
+							<div class="controls">
+								<input type="text" id="inputAddressline1"
+									placeholder="Addlessline2">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="inputPhonenumber">연락처</label>
+							<div class="controls">
+								<input type="text" id="inputPhonenumber"
+									placeholder="Phonenumber">
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<div class="payment_info">
+					<h2>결제정보</h2>
+					<form class="form-horizontal">
+						<div class="control-group">
+							<label class="control-label" for="inputCardnunber">카드번호</label>
+							<div class="controls">
+								<input type="text" id="inputCardnunber" placeholder="Name">
+							</div>
+						</div>
+				</div>
+
+				<div class="price_info">
+					<h2>가격정보</h2>
+					총 얼마 나옴
+					<form action="purchaseConfirm.jsp" method="get">
+						<button type="submit" class="btn btn-primary">구매하기</button>
+						<button type="submit" class="btn">안사</button>
+					</form>
+
+
+
+				</div>
+
+				<div>
+					<br> <br> <br> <br> footer때문에 아래가 잘림 br같은거
+					넣어줘야됨 일단은 <br> <br> <br> <br>
+				</div>
+
 			</div>
 
 			<!-- 3 -->

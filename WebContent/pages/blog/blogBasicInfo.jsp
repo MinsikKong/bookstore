@@ -16,7 +16,8 @@
 
 		<!-- 상대경로 쓰면 안됨 -->
 		<li class="divider"></li>
-		<li><a tabindex="-1" href="/book/trade?op=tradeView">판매/구매 내역조회 </a></li>
+		<li><a tabindex="-1" href="/book/trade?op=tradeView">판매/구매
+				내역조회 </a></li>
 		<li><a tabindex="-1" href="/book/trade?op=cartView">장바구니</a></li>
 		<li><a tabindex="-1" href="/book/friend?op=friendView">친구관리</a></li>
 		<li><a tabindex="-1" href="#">개인정보 수정</a></li>

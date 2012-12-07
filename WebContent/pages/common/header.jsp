@@ -18,16 +18,16 @@
 				<ul class="nav">
 					<%
 						for (String[] menuItem : menu) {
-																												if (currentMenu != null && currentMenu.equals(menuItem[1])) {
-																													out.println("<li class='active'>");
-																												} else {
-																													out.println("<li class=''>");
-																												}
+																			if (currentMenu != null && currentMenu.equals(menuItem[1])) {
+																				out.println("<li class='active'>");
+																			} else {
+																				out.println("<li class=''>");
+																			}
 
-																												out.println("<a href='" + menuItem[0] + "'>" + menuItem[1]
-																														+ "</a>");
-																												out.println("</li>");
-																											}
+																			out.println("<a href='" + menuItem[0] + "'>" + menuItem[1]
+																					+ "</a>");
+																			out.println("</li>");
+																		}
 					%>
 				</ul>
 			</div>
@@ -38,6 +38,7 @@
 						placeholder="검색어" />
 					<!-- <button type="submit" class="btn btn-info">검색</button> -->
 					<a href="#" data-action="search-data" class="btn btn-info">검색</a>
+					<<<<<<< HEAD
 				</form>
 			</div>
 			<div>
@@ -46,7 +47,7 @@
 					<a class="fb_button fb_button_large marginTOP	" id="btnLogin"
 						href="FBAuthServlet.do" data-size="xlarge"> <span
 						class="fb_button_text"> Log In</span>
-					</a>
+					</a> ======= >>>>>>> c36f263ffe980b4dd7beda87f902559dec5cb010
 				</form>
 			</div>
 		</div>
