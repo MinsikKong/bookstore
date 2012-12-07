@@ -7,6 +7,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <jsp:include page="/pages/common/scriptHeaders.jsp" />
+<!-- 페북연동 -->
+<script src="//connect.facebook.net/en_US/all.js"></script>
 </head>
 <body>
 
