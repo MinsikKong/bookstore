@@ -25,7 +25,7 @@ public class UserServlet extends HttpServlet{
 		if(op.equals("sessionInvalidation")){
 			HttpSession session = request.getSession();
 			session.invalidate();
-			actionUrl = "/main";
+			actionUrl = "/main?op=main";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(actionUrl);

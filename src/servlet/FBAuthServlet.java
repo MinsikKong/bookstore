@@ -44,10 +44,11 @@ public class FBAuthServlet extends HttpServlet {
 			
 			session = request.getSession();
 			session.setMaxInactiveInterval(60*10);
-			session.setAttribute("userid", me.getId());
+			session.setAttribute("userId", me.getId());
+			session.setAttribute("userName", me.getName());
 
 			// View page 설정
-			RequestDispatcher view = request.getRequestDispatcher("pages/myFacebook.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("/main");
 			view.forward(request, response);
 		}
 	}	
