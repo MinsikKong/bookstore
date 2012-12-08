@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import com.restfb.types.User;
 
+import dao.UserDAO;
 
 
 @WebServlet("/FBAuthServlet") 
@@ -46,10 +47,15 @@ public class FBAuthServlet extends HttpServlet {
 			session.setMaxInactiveInterval(60*10);
 			session.setAttribute("userId", me.getId());
 			session.setAttribute("userName", me.getName());
-
+			if(!UserDAO.isUser((String)session.getAttribute("userId"))){
+				/*처음 들어오는 사용자는 사이트 운영을 위해 id와 이름만 받는다.*/
+				System.out.println("ok");
+				UserDAO.setUserInfo((String)session.getAttribute("userId"),(String)session.getAttribute("userName"));
+			}
 			// View page 설정
 			RequestDispatcher view = request.getRequestDispatcher("/main");
 			view.forward(request, response);
+		
 		}
 	}	
 }

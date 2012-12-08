@@ -5,13 +5,10 @@
 
 		<li><img src="/book/img/blog_img/pic.png" alt="mainImg" /></li>
 
-		<!-- blog message -->
-		<li>"반갑 습니다."</li>
-
 		<li class="divider"></li>
 
-		<!--  view followers -->
-		<li>팔로어 수 : 80</li>
+		<!--  view friends -->
+		<li>친구 수 : 80</li>
 
 
 		<!-- 상대경로 쓰면 안됨 -->

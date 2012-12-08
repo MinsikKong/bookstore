@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import logic.BusinessLogic;
 import dao.UserDAO;
@@ -28,12 +29,13 @@ public class BlogServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String op = "";
 		String actionUrl = "";
-		
+		HttpSession session = null;
 		try {
 			if(op.equals("main")||op.equals("")){
 				actionUrl = "pages/blog/blogMain.jsp";
-				String searchValue = request.getParameter("searchValue");
-				UserDAO.getUsers(searchValue);
+				session = request.getSession();
+				UserDAO.getFriendsCount((String)session.getAttribute("userId"));
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
