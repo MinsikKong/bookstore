@@ -26,9 +26,12 @@ public class UserDAO {
 
 		SqlSession session = sqlMapper.openSession();
 		boolean isExist = false;
+		int count = 0;
 		try{
+			System.out.println(userId);
 		// selectOne - call nameSpace of Mapper
-			if(session.update("UserMapper.isUser", userId)<=0)
+			count = session.selectOne("UserMapper.isUser", userId);
+			if(count <= 0)
 				isExist = false;
 			else
 				isExist = true;
@@ -37,6 +40,7 @@ public class UserDAO {
 		}finally{
 			session.commit();
 		}
+		System.out.println(isExist+"t or f ");
 		return isExist;
 	}
 	

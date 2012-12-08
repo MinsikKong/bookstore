@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   insert into user_info (id, name) values (#{userId}, #{userName})
  </update>
  
-  <update id="isUser" parameterType="String" >
+  <select id="isUser" parameterType="String" resultType="Integer" >
   select count(*) from user_info where id = #{userId}
- </update>
+ </select>
 </mapper>
