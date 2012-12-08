@@ -7,6 +7,21 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <jsp:include page="/pages/common/scriptHeaders.jsp" />
+
+<script type="text/javascript">
+	function acceptCheck(i) {
+		$("form[class='friend']").find('#friendOp').val("acceptFriend");
+		alert("1");
+		alert(document.friendForm.op.value);
+		$("form[class='friend']").find('#friendId').val(i);
+		$(".friend").submit();
+	}
+	function refusalCheck(i) {
+		$("form[class='friend']").find('#friendOp').val("refusalFriend");
+		$("form[class='friend']").find('#friendId').val(i);
+		$(".friend").submit();
+	}
+</script>
 </head>
 <body>
 
@@ -29,25 +44,38 @@
 			<div class="span10">
 
 				<!-- RightTop -->
-				<div>사용자에게 친구 요청한 사용자의 목록 ( 수락, 거부 버튼) ( ID 클릭시 해당 사용자 블로그로
-					이동)</div>
-
+				<div>
+					<div>나와 친구하고 싶어하는 사용자들</div>
+					<div>
+						<form class="friend" name="friendForm" action="/book/friend" method="post">
+						<c:forEach begin="1" end="2" step="1">
+							<div>
+								<a href="main?op=blog"> 공민식</a> 
+								<a href="#" onclick="acceptCheck('1')" class="btn btn-primary">수락</a> 
+								<a href="#" onclick="refusalcheck('1')" class="btn btn-danger">거부</a> 
+							</div>
+						</c:forEach>
+						<input type="hidden" id = "friendOp" name="op" value="" />
+						<input type="hidden" id = "friendId" name="friendId" value="" />
+						</form>
+					</div>
+				</div>
 				<!-- Right bottom -->
 				<!-- 현재 친구 목록 -->
-				<c:forEach begin="1" end="2" step="1">
-					<div>
-
-						<a href="#" 공민식
-						<button class="btn btn-danger" type="button">삭제</button>
-
-					</div>
-				</c:forEach>
+				<div>
+					<div>나와 친구인 사용자들</div>
+					<c:forEach begin="1" end="2" step="1">
+						<div>
+							<a href="#"> 공민식</a>
+							<button class="btn btn-danger" type="button">삭제</button>
+						</div>
+					</c:forEach>
+				</div>
 			</div>
 		</div>
 	</div>
 
 	<!-- include footer -->
 	<jsp:include page="/pages/common/footer.jsp" />
-
 </body>
 </html>
