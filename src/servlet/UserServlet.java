@@ -14,6 +14,7 @@ import dto.UserDTO;
 
 @WebServlet("/user")
 public class UserServlet extends HttpServlet{
+	private static final long serialVersionUID = 1L;
 	String actionUrl = "";
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -31,6 +32,7 @@ public class UserServlet extends HttpServlet{
 		String id= "1";
 		if(op.equals("searchView")){
 			UserDTO user = UserDAO.getUsers(id);
+			System.out.println(user.getId());
 			request.setAttribute("uDTO", user);
 			actionUrl = "/pages/test.jsp";
 		
