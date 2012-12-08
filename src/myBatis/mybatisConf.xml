@@ -17,5 +17,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
  <mappers>
   <mapper resource="myBatis/mapper/UserMapper.xml" />
   <mapper resource="myBatis/mapper/TradeMapper.xml" />
+  <mapper resource="myBatis/mapper/FriendMapper.xml" />
  </mappers>
 </configuration>

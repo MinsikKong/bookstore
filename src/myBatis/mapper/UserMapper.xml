@@ -6,4 +6,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  <select id="selectUser" parameterType="String" resultType="dto.UserDTO">
   select id from user_info where id = #{searchValue}
  </select>
+ 
+ <update id="setUserInfo" parameterType="HashMap" >
+  insert into user_info (id, name) values (#{userId}, #{userName})
+ </update>
+ 
+  <select id="isUser" parameterType="String" resultType="Integer" >
+  select count(*) from user_info where id = #{userId}
+ </select>
 </mapper>

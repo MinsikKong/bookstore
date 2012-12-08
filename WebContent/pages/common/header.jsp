@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 	String[][] menu = { { "/book/main", "Home" },
 	{ "/book/blog", "Blog" },
@@ -13,21 +14,19 @@
 <div class="navbar ">
 	<div class="navbar-inner">
 		<div class="container">
-			<a class="brand" href="/book/pages/main.jsp">BOOK</a>
+			<a class="brand" href="/book/main">BOOK</a>
 			<div class="nav-collapse collapse">
 				<ul class="nav">
 					<%
 						for (String[] menuItem : menu) {
-																			if (currentMenu != null && currentMenu.equals(menuItem[1])) {
-																				out.println("<li class='active'>");
-																			} else {
-																				out.println("<li class=''>");
-																			}
-
-																			out.println("<a href='" + menuItem[0] + "'>" + menuItem[1]
-																					+ "</a>");
-																			out.println("</li>");
-																		}
+						 if (currentMenu != null && currentMenu.equals(menuItem[1])) {
+						   out.println("<li class='active'>");
+							 } else {
+							    out.println("<li class=''>");
+							 }
+						   out.println("<a href='" + menuItem[0] + "'>" + menuItem[1]+ "</a>");
+						   out.println("</li>");
+						}
 					%>
 				</ul>
 			</div>
@@ -41,13 +40,33 @@
 				</form>
 			</div>
 			<div>
-				<form class="navbar-form pull-right">
-					<!-- Facebook 접속 버튼 -->
-					<a class="fb_button fb_button_large marginTOP	" id="btnLogin"
-						href="FBAuthServlet.do" data-size="xlarge"> <span
-						class="fb_button_text"> Log In</span>
-					</a>
-				</form>
+				<c:out value="${sessionScope.userId}" />
+				<c:choose>
+					<c:when test="${sessionScope.userId == null}">
+						<form class="navbar-form pull-right">
+							<!-- Facebook 접속 버튼 -->
+							<a class="fb_button fb_button_large marginTOP	" id="btnLogin"
+								href="FBAuthServlet.do" data-size="xlarge"> <span
+								class="fb_button_text"> Log In</span>
+							</a>
+						</form>
+					</c:when>
+					<c:otherwise>
+						<!-- session.getAttribute("userid") 으로 가져다 쓰면됨. 세션-->
+						<form class="navbar-form pull-right">
+							<img
+								src="https://graph.facebook.com/${sessionScope.userId}/picture?type=square"
+								class="img-polaroid" />
+							<%
+								System.out.println(session.getAttribute("userName"));
+							%>
+							${me.id}
+							${me.name} <a href="user?op=sessionInvalidation"
+								class="btn btn-primary"> 로그아웃</a>
+						</form>
+					</c:otherwise>
+				</c:choose>
+
 			</div>
 		</div>
 	</div>

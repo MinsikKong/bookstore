@@ -32,6 +32,8 @@ public class TradeServlet extends HttpServlet{
 				actionUrl = "pages/trade/cartView.jsp";
 			}else if(op.equals("sellerView")){
 				actionUrl = "pages/trade/sellerView.jsp";
+			}else if(op.equals("bookReg")){
+				actionUrl = "pages/trade/bookReg.jsp";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
