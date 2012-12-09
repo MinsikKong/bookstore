@@ -47,16 +47,17 @@
 				<div>
 					<div>나와 친구하고 싶어하는 사용자들</div>
 					<div>
-						<form class="friend" name="friendForm" action="/book/friend" method="post">
-						<c:forEach begin="1" end="2" step="1">
-							<div>
-								<a href="main?op=blog"> 공민식</a> 
-								<a href="#" onclick="acceptCheck('1')" class="btn btn-primary">수락</a> 
-								<a href="#" onclick="refusalcheck('1')" class="btn btn-danger">거부</a> 
-							</div>
-						</c:forEach>
-						<input type="hidden" id = "friendOp" name="op" value="" />
-						<input type="hidden" id = "friendId" name="friendId" value="" />
+						<form class="friend" name="friendForm" action="/book/friend"
+							method="post">
+							<c:forEach begin="1" end="2" step="1">
+								<div>
+									<a href="main?op=blog"> 공민식</a> <a href="#"
+										onclick="acceptCheck('1')" class="btn btn-primary">수락</a> <a
+										href="#" onclick="refusalcheck('1')" class="btn btn-danger">거부</a>
+								</div>
+							</c:forEach>
+							<input type="hidden" id="friendOp" name="op" value="" /> <input
+								type="hidden" id="friendId" name="friendId" value="" />
 						</form>
 					</div>
 				</div>
