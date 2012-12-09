@@ -67,6 +67,7 @@ public class FriendDAO {
 			HashMap<String, String> map= new HashMap<String, String>();
 			map.put("userId", userId);
 			map.put("flag", "0");
+			System.out.println(userId);
 			results = session.selectList("FriendMapper.getFriends", map );
 			for(UserDTO user : results) {
 

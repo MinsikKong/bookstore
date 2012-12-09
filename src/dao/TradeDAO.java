@@ -90,6 +90,26 @@ public class TradeDAO {
 
 		return result;
 	}
+	public static List<BookDTO> getNowSellList(String userId) {
+
+		SqlSession session = sqlMapper.openSession();
+		List<BookDTO> result = null;
+		try {
+			result =  session.selectList("TradeMapper.getNowSellList", userId );
+			session.commit();
+			for(BookDTO user : result) {
+
+				System.out.println(user.getTitle()+"<-sellBookList of me");
+
+				}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+
+		return result;
+	}
 	
 	public static int totalBuyPrice(String userId) {
 

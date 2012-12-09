@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +13,8 @@ import javax.servlet.http.HttpSession;
 
 import logic.TradeLogic;
 import dao.FriendDAO;
+import dao.TradeDAO;
+import dto.BookDTO;
 import dto.UserDTO;
 
 @WebServlet("/blog")
@@ -36,7 +39,9 @@ public class BlogServlet extends HttpServlet {
 				actionUrl = "pages/blog/blogMain.jsp";
 				session = request.getSession();
 				fCount = FriendDAO.getFriendsCount((String)session.getAttribute("userId"));
+				List<BookDTO> nsDto = TradeDAO.getNowSellList((String)session.getAttribute("userId"));
 				request.setAttribute("fCount", fCount);
+				request.setAttribute("nsDto", nsDto);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
