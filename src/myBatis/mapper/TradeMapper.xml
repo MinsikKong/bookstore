@@ -59,5 +59,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	and sell_book_list.isbn = book_info.isbn
 	and sell_book_list.flag='1'
 	</select>
+	<select id="getNowSellList" parameterType="String" resultMap="showSellList">
+	select 
+	book_info.title,
+	book_info.author,
+	sell_book_list.book_quantity,
+	 sell_book_list.sell_price 
+	from 
+	book_info, 
+	sell_book_list
+	where sell_book_list.id=#{userId}
+	and sell_book_list.isbn = book_info.isbn
+	and sell_book_list.flag='0'
+	</select>
 	
 </mapper>

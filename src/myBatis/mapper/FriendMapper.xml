@@ -21,28 +21,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		set flag = 3 
 		</if>
 		where 
-		<if test=" flag== 1 or flah==2">
+		<if test=" flag== 1 or flag==2">
 		 flag = 0 
 		</if>
 		<if test=" flag== 3">
 		 flag = 1 
 		</if>
-		 and friend1 = #{userId} and
-		friend2 = #{friendId}
+		 and master = #{userId} and
+		slave = #{friendId}
 	</update>
 
 	<select id="friendCount" parameterType="String" resultType="Integer">
-		select count(*) from friend_info where friend1 =#{id} and flag='1'
+		select count(*) from friend_info where master =#{id} and flag='1'
 	</select>
 
 	<select id="getFriends" parameterType="HashMap" resultType="dto.UserDTO">
 	select 
-	idx, 
-	sell_book_list_idx, 
-	quantity, 
-	name,
-	price,
-	where user_info.id = friend_info.friend2 and friend_info.friend1 = #{userId} 
+	user_info.id, 
+	user_info.name 
+	from user_info, friend_info
+	where user_info.id = friend_info.slave and friend_info.master = #{userId} 
 	<if test="flag == 1">
 	and friend_info.flag='1'
 	</if>

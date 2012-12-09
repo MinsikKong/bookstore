@@ -3,11 +3,38 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="BookMapper">
+<resultMap id="getSeller" type="dto.PurchaseDTO">
+		<result property="seller" column="name" javaType="java.lang.String" />
+		<result property="price" column="sell_price" javaType="java.lang.String" />
+		<result property="status" column="book_status" javaType="java.lang.String" />
+		<result property="introduction" column="contents" javaType="java.lang.String" />
+		<result property="idx" column="IDX" javaType="java.lang.String" />
+		<result property="id" column="id" javaType="java.lang.String" />
+		<result property="title" column="title" javaType="java.lang.String" />
+	</resultMap>
+	
 	<select id="selectBook" parameterType="String" resultType="dto.BookDTO">
 		select title from book_info where isbn = #{searchValue}
 	</select>
 	<select id="selectRecentBook" parameterType="String" resultType="dto.BookDTO">
 		select * from book_info ORDER BY Published_date DESC limit 0,1
 	</select>
+	
+		<select id="bookSearch" parameterType="String" resultType="dto.BookDTO">
+		select ISBN, title, author, introduction, price from book_info where title LIKE  CONCAT('%', #{sValue}, '%')
+		</select>
+	
+	<select id="getBookWithISBN" parameterType="String" resultType="dto.BookDTO">
+		select ISBN, title, author, introduction, price from book_info where isbn=#{isbn}
+		</select>
+	
+		<select id="getPurchaseInfo" parameterType="String" resultType="dto.PurchaseDTO">
+		select 
+		a.name,b.sell_price,b.book_status,b.contents,b.idx,b.id ,b.title
+		from user_info a, sell_book_list b
+		 where a.id = b.id and b.idx=#{sellContentIdx}
+
+		</select>
+	
 </mapper>
 

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +33,17 @@
 				<div>
 
 					<!-- Right Top 2-1 -->
-					<div>현재 판매중인 도서, 우측 상단 더 보기 아이콘 존재</div>
+					<div class="well">
+					<div><h3>현재 판매중인도서</h3></div>
+					<c:forEach var="nowSellBook" items="${nsDto}" varStatus="status">
+							<div>
+							제목 :<c:out value="${nowSellBook.title}"/>
+							저자 :<c:out value="${nowSellBook.author}"/>
+							<%-- 구매량 :<c:out value="${buyBook.quantity}"/> --%>
+							가격 :<c:out value="${nowSellBook.price}"/>
+							 </div>
+						</c:forEach>
+						</div>
 
 					<!-- Right Top 2-2 -->
 					<div>사용자게시물에 달린 댓글 우측 상단 더 보기 아이콘 존재</div>

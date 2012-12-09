@@ -1,10 +1,12 @@
 package dao;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import dto.BookDTO;
 import dto.PurchaseDTO;
 import dto.UserDTO;
 
@@ -99,4 +101,20 @@ public class UserDAO {
 		return result;
 	}
 
+	public static List<UserDTO> getSeller(String isbn) {
+
+		SqlSession session = sqlMapper.openSession();
+		List<UserDTO> result = null;
+		try {
+			result =  session.selectList("UserMapper.getSeller", isbn );
+			session.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+
+		return result;
+	}
+	
 }

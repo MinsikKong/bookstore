@@ -61,20 +61,14 @@
 					</div>
 				</div>
 
-				<c:forEach begin="1" end="4" step="1">
+					<c:forEach var="seller" items="${sellers}">
 					<div>
-						<div class="float_style">판매자 : 김성모 상태 : A+ 가격 :
-							7000원&nbsp;&nbsp;&nbsp;&nbsp;</div>
+						<div class="float_style">판매자 :${seller.seller} 상태 :  ${seller.status} 가격 :
+							 ${seller.price}원&nbsp;&nbsp;&nbsp;&nbsp;</div>
 						<div class="contentsLine2 sellerView_contentsSpace float_style">할말
-							: 50height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을
-							써도50height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을
-							써도50height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을
-							써도50height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을
-							써도50height가 넘어가는 순간 자바스크립트를 통해 여행을 떠나고 말지요. 아무리 엄청난 내용을 써도</div>
+							:  ${seller.introduction}</div>
 						<div>
-							<form action="/book/trade?op=purchaseView" method="post">
-								<button type="submit" class="btn btn-primary">구매하러가야됨</button>
-							</form>
+								<a href="/book/trade?op=purchaseView&sellContentIdx=${seller.idx}" class="btn btn-primary">구매하러가야됨</a>
 						</div>
 					</div>
 				</c:forEach>

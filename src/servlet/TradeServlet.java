@@ -11,12 +11,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import logic.TradeLogic;
 import util.ChangeUtil;
+import dao.BookDAO;
+import dao.FriendDAO;
 import dao.TradeDAO;
+import dao.UserDAO;
 import dto.BookDTO;
 import dto.PurchaseDTO;
 import dto.SellDTO;
+import dto.UserDTO;
 
 @WebServlet("/trade")
 public class TradeServlet extends HttpServlet{
@@ -30,15 +33,19 @@ public class TradeServlet extends HttpServlet{
 		String actionUrl = "";
 		
 		try {
+			HttpSession session = request.getSession();
 			op = ChangeUtil.getStringParameter(request.getParameter("op"),"");
 			if(op.equals("tradeView")||op.equals("")){
 				System.out.println("dodget의 tradeView로 옴");
-				HttpSession session = request.getSession();
+				
 				
 				List<BookDTO> bDto = TradeDAO.getBuyList((String)session.getAttribute("userId"));
 				List<BookDTO> sDto = TradeDAO.getSellList((String)session.getAttribute("userId"));
 				int totalBuyPrice = TradeDAO.totalBuyPrice((String)session.getAttribute("userId"));
 				int totalSellPrice = TradeDAO.totalSellPrice((String)session.getAttribute("userId"));
+				int fCount = 0;
+				fCount = FriendDAO.getFriendsCount((String)session.getAttribute("userId"));
+				request.setAttribute("fCount", fCount);
 				request.setAttribute("sDto", sDto);
 				request.setAttribute("bDto", bDto);
 				request.setAttribute("totalBuyPrice", totalBuyPrice);
@@ -47,9 +54,23 @@ public class TradeServlet extends HttpServlet{
 			}else if(op.equals("cartView")){
 				actionUrl = "pages/trade/cartView.jsp";
 			}else if(op.equals("sellerView")){
+				String isbn = ChangeUtil.getStringParameter(request.getParameter("isbn"),"");
+				System.out.println("여기");
+				BookDTO result = BookDAO.getBookWithISBN(isbn);
+				List<UserDTO> sellers = UserDAO.getSeller(isbn);
+				request.setAttribute("searchBook", result);
+				request.setAttribute("sellers", sellers);
 				actionUrl = "pages/trade/sellerView.jsp";
 			}else if(op.equals("bookReg")){
+				int fCount = 0;
+				fCount = FriendDAO.getFriendsCount((String)session.getAttribute("userId"));
+				request.setAttribute("fCount", fCount);
 				actionUrl = "pages/trade/bookReg.jsp";
+			}else if(op.equals("purchaseView")){
+				String sellContentIdx = ChangeUtil.getStringParameter(request.getParameter("sellContentIdx"),"");
+				PurchaseDTO result = BookDAO.getPurchaseInfo(sellContentIdx);
+				request.setAttribute("bDto", result);
+				actionUrl = "pages/trade/purchaseView.jsp";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -65,11 +86,16 @@ public class TradeServlet extends HttpServlet{
 		String op = "";
 		String actionUrl = "";
 		try {
+			HttpSession session = request.getSession();
 			op = ChangeUtil.getStringParameter(request.getParameter("op"),"");
 			
 			if(op.equals("purchaseView")){
 				actionUrl = "pages/trade/purchaseView.jsp";
 			}else if(op.equals("tradeView")){
+				
+				int fCount = 0;
+				fCount = FriendDAO.getFriendsCount((String)session.getAttribute("userId"));
+				request.setAttribute("fCount", fCount);
 				actionUrl = "pages/trade/tradeView.jsp";
 			}else if(op.equals("purchase")){
 				request.setCharacterEncoding("utf-8");
@@ -94,7 +120,6 @@ public class TradeServlet extends HttpServlet{
 				}
 			}else if(op.equals("regBook")){
 				request.setCharacterEncoding("utf-8");
-				HttpSession session = request.getSession();
 				SellDTO sDto = new SellDTO();
 				String ISBN = ChangeUtil.getStringParameter(request.getParameter("ISBN"),"empty");
 				String title = ChangeUtil.getStringParameter(request.getParameter("title"),"empty");
