@@ -2,17 +2,56 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="FriendMapper">
-	<update id="acceptWaitingFriend" parameterType="java.util.HashMap">
-		update friend_info set flag = 1 where flag = 0 and friend1 = #{userId} and friend2 = #{friendId}
+	<resultMap id="UserDTO_MAP" type="dto.UserDTO">
+		<result property="id" column="FRIEND2" javaType="java.lang.String" />
+	</resultMap>
+
+	<update id="manageFriend" parameterType="java.util.HashMap">
+		update
+		friend_info 
+		<if test="flag == 1">
+		set flag = 1 
+		</if>
+		<if test="flag == 2">
+		set flag = 2 
+		</if>
+		<if test="flag == 3">
+		set flag = 3 
+		</if>
+		where 
+		<if test=" flag== 1 or flah==2">
+		 flag = 0 
+		</if>
+		<if test=" flag== 3">
+		 flag = 1 
+		</if>
+		 and friend1 = #{userId} and
+		friend2 = #{friendId}
 	</update>
-	
-	<update id="refusalWaitingFriend" parameterType="java.util.HashMap">
-		update friend_info set flag = 2 where flag = 0 and friend1 = #{userId} and friend2 = #{friendId}
-	</update>
-	
-	<select id="friendCount" parameterType="String">
-		select count(*) from friend_info where friend1 =#{id}
+
+	<select id="friendCount" parameterType="String" resultType="Integer">
+		select count(*) from friend_info where friend1 =#{id} and flag='1'
+	</select>
+
+	<select id="getFriends" parameterType="HashMap" resultType="dto.UserDTO">
+	select 
+	idx, 
+	sell_book_list_idx, 
+	quantity, 
+	name,
+	price,
+	where user_info.id = friend_info.friend2 and friend_info.friend1 = #{userId} 
+	<if test="flag == 1">
+	and friend_info.flag='1'
+	</if>
+	<if test="flag == 0">
+	and friend_info.flag='0'
+	</if>
 	</select>
 	
+
+
+
 </mapper>

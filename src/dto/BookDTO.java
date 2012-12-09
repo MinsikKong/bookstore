@@ -2,24 +2,26 @@ package dto;
 
 public class BookDTO {
 
-	String isbn;
-	String title;
-	String author;
-	String translator;
-	String publisher;
-	String published_date;
-	int price;
+	String title = "";
+	String author = "";
+	String quantity = "";
+	String price = "";
+	int totalPrice = 0;
+
+	public int getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(int totalPrice) {
+		this.totalPrice = totalPrice;
+	}
 
 	public String getTitle() {
 		return title;
 	}
 
-	public String getIsbn() {
-		return isbn;
-	}
-
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getAuthor() {
@@ -30,40 +32,19 @@ public class BookDTO {
 		this.author = author;
 	}
 
-	public String getTranslator() {
-		return translator;
+	public String getQuantity() {
+		return quantity;
 	}
 
-	public void setTranslator(String translator) {
-		this.translator = translator;
+	public void setQuantity(String quantity) {
+		this.quantity = quantity;
 	}
 
-	public String getPublisher() {
-		return publisher;
-	}
-
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
-	}
-
-	public String getPublished_date() {
-		return published_date;
-	}
-
-	public void setPublished_date(String published_date) {
-		this.published_date = published_date;
-	}
-
-	public int getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
-
-	public void setTitle(String id) {
-		this.title = title;
-	}
-
 }
