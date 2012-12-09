@@ -19,11 +19,10 @@ public class UserServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+		HttpSession session = null;
 		String op= request.getParameter("op");
-		String id= "1";
 		if(op.equals("sessionInvalidation")){
-			HttpSession session = request.getSession();
+			session = request.getSession();
 			session.invalidate();
 			actionUrl = "/main?op=main";
 		}

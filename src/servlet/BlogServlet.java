@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import logic.BusinessLogic;
-import dao.UserDAO;
+import logic.TradeLogic;
+import dao.FriendDAO;
 import dto.UserDTO;
 
 @WebServlet("/blog")
@@ -20,7 +20,7 @@ public class BlogServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public UserDTO getUser() {
-		BusinessLogic bLogic = new BusinessLogic();
+		TradeLogic bLogic = new TradeLogic();
 		String value = "";
 		UserDTO list = bLogic.getUser(value);
 		return list;
@@ -32,10 +32,11 @@ public class BlogServlet extends HttpServlet {
 		HttpSession session = null;
 		try {
 			if(op.equals("main")||op.equals("")){
+				int fCount = 0;
 				actionUrl = "pages/blog/blogMain.jsp";
 				session = request.getSession();
-				UserDAO.getFriendsCount((String)session.getAttribute("userId"));
-				
+				fCount = FriendDAO.getFriendsCount((String)session.getAttribute("userId"));
+				request.setAttribute("fCount", fCount);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

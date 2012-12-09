@@ -45,23 +45,6 @@ public class UserDAO {
 	}
 	
 	
-	public static int getFriendsCount(String userId) {
-
-		SqlSession session = sqlMapper.openSession();
-		
-		int friendCount = 0;
-		try{
-		// selectOne - call nameSpace of Mapper
-			friendCount = session.selectOne("FriendMapper.friendCount", userId);
-		}catch(Exception e){
-			e.printStackTrace();
-		}finally{
-			session.commit();
-		}
-		System.out.println(friendCount +" <-friendCount");
-		return friendCount;
-	}
-	
 	public static int purchaseBook(PurchaseDTO pDto) {
 
 		SqlSession session = sqlMapper.openSession();
@@ -86,7 +69,6 @@ public class UserDAO {
 			HashMap<String, String> map= new HashMap<String, String>();
 			map.put("userId", userId);
 			map.put("userName", userName);
-			System.out.println(userId+" <-userid");
 			System.out.println(userId+" <-userid");
 			result =  session.update("UserMapper.setUserInfo", map );
 			session.commit();

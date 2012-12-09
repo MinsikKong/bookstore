@@ -7,7 +7,6 @@ public class UserDTO {
 	String password;
 	String createDate;
 	
-	
 	public String getId() {
 		return id;
 	}

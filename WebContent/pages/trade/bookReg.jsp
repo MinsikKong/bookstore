@@ -27,7 +27,7 @@
 
 			<!--Body content-->
 			<div class="span10">
-				<form class="form-horizontal">
+				<form class="form-horizontal" name="regForm" action="/book/trade?op=regBook" method="post">
 					<!-- 도서정보 -->
 					<div class="control-group">
 						<label class="control-label" for="ISBN">ISBN</label>
@@ -37,9 +37,9 @@
 					</div>
 
 					<div class="control-group">
-						<label class="control-label" for="subject">제목</label>
+						<label class="control-label" for="title">제목</label>
 						<div class="controls">
-							<input type="text" name="subject" placeholder="제목">
+							<input type="text" name="title" placeholder="제목">
 						</div>
 					</div>
 
@@ -88,16 +88,9 @@
 					</div>
 
 					<div class="control-group">
-						<label class="control-label" for="uesdPrice">중고가</label>
+						<label class="control-label" for="usedPrice">희망가격</label>
 						<div class="controls">
-							<input type="text" name="uesdPrice" placeholder="중고가">
-						</div>
-					</div>
-
-					<div class="control-group">
-						<label class="control-label" for="seller">판매자</label>
-						<div class="controls">
-							<input type="text" name="seller" placeholder="판매자">
+							<input type="text" name="usedPrice" placeholder="희망가격">
 						</div>
 					</div>
 
@@ -116,18 +109,17 @@
 					</div>
 					
 					<div class="control-group">
-							<label class="control-label" for="inputPassword">Password</label>
+							<label class="control-label" for="password">Password</label>
 							<div class="controls">
-								<input type="password" name="inputPassword" placeholder="Password">
+								<input type="password" name="password" placeholder="Password">
 							</div>
 						</div>
 						
 					<div class="control-group">
 						<div class="controls">
-							<label class="checkbox"> <input type="checkbox">
-								Remember me
+							<label class="checkbox">
 							</label>
-							<button type="submit" class="btn">등록</button>
+							<a href="#" data-action="reg-book" class="btn btn-large btn-primary">도서 등록</a>
 						</div>
 					</div>
 
@@ -137,6 +129,78 @@
 	</div>
 	<!-- include footer -->
 	<jsp:include page="/pages/common/footer.jsp" />
-
 </body>
+
+<script type="text/javascript">
+	$(function() {
+		$("a[data-action='reg-book']").click(function() {
+			form = document.regForm;
+			if (form.ISBN.value == '') {
+				alert("ISBN을 입력하세요");
+				form.ISBN.focus();
+				return;
+			}
+			if (form.title.value == '') {
+				alert("제목을 입력하세요");
+				form.title.focus();
+				return;
+			}
+			if (form.author.value == '') {
+				alert("저자를 입력하세요");
+				form.author.focus();
+				return;
+			}
+			
+			if (form.translator.value == '') {
+				alert("저자를 입력하세요");
+				form.translator.focus();
+				return;
+			}
+			if (form.publisher.value == '') {
+				alert("출판사를 입력하세요");
+				form.publisher.focus();
+				return;
+			}
+			if (form.publishDate.value == '') {
+				alert("출판일을 입력하세요");
+				form.publishDate.focus();
+				return;
+			}
+			if (form.price.value == '') {
+				alert("가격을 입력하세요");
+				form.price.focus();
+				return;
+			}
+			if (form.quality.value == '') {
+				alert("품질을 입력하세요");
+				form.quality.focus();
+				return;
+			}
+			if (form.usedPrice.value == '') {
+				alert("희망가격을 입력하세요");
+				form.usedPrice.focus();
+				return;
+			}
+			if (form.stock.value == '') {
+				alert("판매수량을 입력하세요");
+				form.stock.focus();
+				return;
+			}
+			if (form.contents.value == '') {
+				alert("내용을 입력하세요");
+				form.contents.focus();
+				return;
+			}
+			if (form.password.value == '') {
+				alert("게시물 비밀번호를 입력하세요");
+				form.password.focus();
+				return;
+			}
+			if (confirm("내용을 전송하시겠습니까?")) {
+				form.submit();
+			}
+			
+		});
+	});
+</script>
 </html>

@@ -3,10 +3,61 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="TradeMapper">
+
+	<resultMap id="showBuyList" type="dto.BookDTO">
+		<result property="title" column="title" javaType="java.lang.String" />
+		<result property="author" column="author" javaType="java.lang.String" />
+		<result property="quantity" column="quantity" javaType="java.lang.String" />
+		<result property="price" column="price" javaType="java.lang.String" />
+	</resultMap>
+	
+	<resultMap id="showSellList" type="dto.BookDTO">
+		<result property="title" column="title" javaType="java.lang.String" />
+		<result property="author" column="author" javaType="java.lang.String" />
+		<result property="quantity" column="book_quantity" javaType="java.lang.String" />
+		<result property="price" column="sell_price" javaType="java.lang.String" />
+	</resultMap>
+	
 	<update id="purchaseBook" parameterType="dto.PurchaseDTO">
 		insert into purchased_book_list
 		(ID, SELL_BOOK_LIST_idx, Quantity, name,Price,Phone_number,Zip_code, Address_base, Address_Detail,To_Postman, Card_no, Flag)
 		values
 		('1','1', '1',#{name},'10000', #{phoneNumber}, #{postalcode}, #{addressline1}, #{addressline2},#{phoneNumber},#{cardNumber},'0')
 	</update>
+	<update id="regBook" parameterType="dto.SellDTO">
+		insert into sell_book_list
+		(ID, ISBN, title, contents,sell_price,book_status,book_quantity,Flag)
+		values
+		(#{id},#{ISBN}, #{title},#{contents},#{usedPrice}, #{quality}, #{stock}, '0');
+	</update>
+	
+	<select id="getBuyList" parameterType="String" resultMap="showBuyList">
+	select 
+	book_info.title, 
+	book_info.author,
+	purchased_book_list.quantity, 
+	purchased_book_list.price 
+	from 
+	book_info, 
+	purchased_book_list
+	where 
+	purchased_book_list.id=#{userId} 
+	and purchased_book_list.sell_book_list_idx = book_info.isbn
+	and purchased_book_list.flag='0'
+	</select>
+	
+	<select id="getSellList" parameterType="String" resultMap="showSellList">
+	select 
+	book_info.title,
+	book_info.author,
+	sell_book_list.book_quantity,
+	 sell_book_list.sell_price 
+	from 
+	book_info, 
+	sell_book_list
+	where sell_book_list.id=#{userId}
+	and sell_book_list.isbn = book_info.isbn
+	and sell_book_list.flag='1'
+	</select>
+	
 </mapper>

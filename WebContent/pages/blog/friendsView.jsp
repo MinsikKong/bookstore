@@ -11,13 +11,16 @@
 <script type="text/javascript">
 	function acceptCheck(i) {
 		$("form[class='friend']").find('#friendOp').val("acceptFriend");
-		alert("1");
-		alert(document.friendForm.op.value);
 		$("form[class='friend']").find('#friendId').val(i);
 		$(".friend").submit();
 	}
 	function refusalCheck(i) {
 		$("form[class='friend']").find('#friendOp').val("refusalFriend");
+		$("form[class='friend']").find('#friendId').val(i);
+		$(".friend").submit();
+	}
+	function deleteCheck(i) {
+		$("form[class='friend']").find('#friendOp').val("deleteFriend");
 		$("form[class='friend']").find('#friendId').val(i);
 		$(".friend").submit();
 	}
@@ -42,35 +45,37 @@
 
 			<!--Body content-->
 			<div class="span10">
-
-				<!-- RightTop -->
-				<div>
-					<div>나와 친구하고 싶어하는 사용자들</div>
-					<div>
-						<form class="friend" name="friendForm" action="/book/friend" method="post">
-						<c:forEach begin="1" end="2" step="1">
+				<form class="friend" name="friendForm" action="/book/friend" method="post">
+					<!-- RightTop -->
+					<div  class="hero-unit">
+						<div>나와 친구하고 싶어하는 사용자들</div>
+						<div>
+							
+							<c:forEach var="watingFriend" items="${fwLists}">
+								<div>
+									<a href="main?op=blog"> <c:out value="${watingFriend.name}" /></a> 
+									<a href="#" onclick="acceptCheck('${watingFriend.id}')" class="btn btn-primary">수락</a> 
+									<a href="#" onclick="refusalCheck('${watingFriend.id}')" class="btn btn-danger">거부</a> 
+								</div>
+							</c:forEach>
+							<input type="hidden" id = "friendOp" name="op" value="" />
+							<input type="hidden" id = "friendId" name="friendId" value="" />
+						</div>
+					</div>
+					<!-- Right bottom -->
+					<!-- 현재 친구 목록 -->
+					<div class="hero-unit">
+						<div>
+						나와 친구인 사용자들
+						</div>
+						<c:forEach var="friend" items="${fLists}">
 							<div>
-								<a href="main?op=blog"> 공민식</a> 
-								<a href="#" onclick="acceptCheck('1')" class="btn btn-primary">수락</a> 
-								<a href="#" onclick="refusalcheck('1')" class="btn btn-danger">거부</a> 
+								<a href="#"><c:out value="${friend.name}" /></a>
+								<a href="#" onclick="deleteCheck('${friend.id}')" class="btn btn-danger">삭제</a> 
 							</div>
 						</c:forEach>
-						<input type="hidden" id = "friendOp" name="op" value="" />
-						<input type="hidden" id = "friendId" name="friendId" value="" />
-						</form>
 					</div>
-				</div>
-				<!-- Right bottom -->
-				<!-- 현재 친구 목록 -->
-				<div>
-					<div>나와 친구인 사용자들</div>
-					<c:forEach begin="1" end="2" step="1">
-						<div>
-							<a href="#"> 공민식</a>
-							<button class="btn btn-danger" type="button">삭제</button>
-						</div>
-					</c:forEach>
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>

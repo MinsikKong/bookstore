@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div class="well" style="max-width: 340px; padding: 8px 0;">
 	<ul class="nav nav-list" role="menu" aria-labelledby="dropdownMenu">
 
@@ -8,7 +9,7 @@
 		<li class="divider"></li>
 
 		<!--  view friends -->
-		<li>친구 수 : 80</li>
+		<li>친구 수 : ${fCount}</li>
 
 
 		<!-- 상대경로 쓰면 안됨 -->
