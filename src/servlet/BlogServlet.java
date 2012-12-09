@@ -19,12 +19,12 @@ public class BlogServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 
-	public UserDTO getUser() {
+	/*public UserDTO getUser() {
 		TradeLogic bLogic = new TradeLogic();
 		String value = "";
 		UserDTO list = bLogic.getUser(value);
 		return list;
-	}
+	}*/
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String op = "";
