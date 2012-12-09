@@ -14,22 +14,12 @@ import myBatis.MyBatisManager;
 public class BookDAO {
 	public static SqlSessionFactory sqlMapper = MyBatisManager.getInstance();
 
-	public static BookDTO getRecentBook(String searchValue) {
+	public static BookDTO getBook(String searchValue) {
 
 		SqlSession session = sqlMapper.openSession();
 
 		// selectOne - call nameSpace of Mapper
-		BookDTO books = session
-				.selectOne("BookMapper.getBookName", searchValue);
+		BookDTO books = session.selectOne("BookMapper.selectBook", searchValue);
 		return books;
-	}
-	
-	public static UserDTO getUsers(String searchValue) {
-
-		SqlSession session = sqlMapper.openSession();
-
-		// selectOne - call nameSpace of Mapper
-		UserDTO users = session.selectOne("UserMapper.selectUser", searchValue);
-		return users;
 	}
 }

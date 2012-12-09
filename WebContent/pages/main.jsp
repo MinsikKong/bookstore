@@ -3,9 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="dto.UserDTO"%>
 <%@ page import="dao.UserDAO"%>
+<%@ page import="dto.BookDTO"%>
+<%@ page import="dao.BookDAO"%>
 <%
 	UserDTO user = UserDAO.getUsers("1");
+	BookDTO book = BookDAO.getBook("0000000000001");
 %>
+
 
 <!DOCTYPE html>
 <html>
@@ -51,6 +55,7 @@
 				<div>
 					<%
 						out.println(user.getId());
+						out.println(book.getTitle());
 					%>
 					<h4>최근 등록된 도서</h4>
 
