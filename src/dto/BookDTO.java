@@ -2,11 +2,29 @@ package dto;
 
 public class BookDTO {
 
+	String isbn = "";
 	String title = "";
 	String author = "";
 	String quantity = "";
 	String price = "";
 	int totalPrice = 0;
+	String Explain = "";
+
+	public String getExplain() {
+		return Explain;
+	}
+
+	public void setExplain(String Explain) {
+		this.Explain = Explain;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
 
 	public int getTotalPrice() {
 		return totalPrice;

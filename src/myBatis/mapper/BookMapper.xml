@@ -6,4 +6,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectBook" parameterType="String" resultType="dto.BookDTO">
 		select title from book_info where isbn = #{searchValue}
 	</select>
+	<select id="selectRecentBook" parameterType="String" resultType="dto.BookDTO">
+		select * from book_info ORDER BY Published_date DESC limit 0,1
+	</select>
 </mapper>
+

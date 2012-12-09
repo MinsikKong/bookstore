@@ -3,10 +3,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="dto.UserDTO"%>
 <%@ page import="dao.UserDAO"%>
+<%@ page import="dto.BookDTO"%>
+<%@ page import="dao.BookDAO"%>
 <%
 	UserDTO user = UserDAO.getUsers("1");
+	BookDTO recentBook = BookDAO.getRecentBook();
 %>
 
+
+<%
+	
+%>
 
 <!DOCTYPE html>
 <html>
@@ -50,15 +57,21 @@
 			<!--left content-->
 			<div class="span2">
 				<div>
-					<%
-						out.println(user.getId());
-					%>
 					<h4>최근 등록된 도서</h4>
+
 
 					<div class="thumbnail">
 						<img src="http://placehold.it/300x200" alt="">
-						<h3>최근책1</h3>
-						<p>Thumbnail caption...</p>
+						<h3>
+							<%
+								out.println(recentBook.getTitle());
+							%>
+						</h3>
+						<p>
+							<%
+								out.println(recentBook.getExplain());
+							%>
+						</p>
 					</div>
 
 				</div>
