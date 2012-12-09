@@ -45,15 +45,16 @@
 
 			<!--Body content-->
 			<div class="span10">
-				<<<<<<< HEAD
-
 				<!-- RightTop -->
 				<div>
 					<div>나와 친구하고 싶어하는 사용자들</div>
 					<div>
-						<form class="friend" name="friendForm" action="/book/friend"
-							method="post">
-							<c:forEach begin="1" end="2" step="1">
+							<form class="friend" name="friendForm" action="/book/friend" method="post">
+					<!-- RightTop -->
+					<div class="hero-unit">
+						나와 친구하고 싶어하는 사용자들</div>
+							
+							<c:forEach var="watingFriend" items="${fwLists}">
 								<div>
 									<a href="main?op=blog"> 공민식</a> <a href="#"
 										onclick="acceptCheck('1')" class="btn btn-primary">수락</a> <a
@@ -63,7 +64,6 @@
 							<input type="hidden" id="friendOp" name="op" value="" /> <input
 								type="hidden" id="friendId" name="friendId" value="" />
 						</form>
-						=======
 						<form class="friend" name="friendForm" action="/book/friend"
 							method="post">
 							<!-- RightTop -->
@@ -95,7 +95,6 @@
 											onclick="deleteCheck('${friend.id}')" class="btn btn-danger">삭제</a>
 									</div>
 								</c:forEach>
-								>>>>>>> 09b4c245f0f970a5976555b72a096b9d58cf8be6
 							</div>
 						</form>
 					</div>
