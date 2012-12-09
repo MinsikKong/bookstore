@@ -43,7 +43,6 @@ public class UserDAO {
 		System.out.println(isExist + "t or f ");
 		return isExist;
 	}
-<<<<<<< HEAD
 
 	public static int getFriendsCount(String userId) {
 
@@ -62,10 +61,6 @@ public class UserDAO {
 		return friendCount;
 	}
 
-=======
-	
-	
->>>>>>> 09b4c245f0f970a5976555b72a096b9d58cf8be6
 	public static int purchaseBook(PurchaseDTO pDto) {
 
 		SqlSession session = sqlMapper.openSession();
@@ -91,14 +86,9 @@ public class UserDAO {
 			HashMap<String, String> map = new HashMap<String, String>();
 			map.put("userId", userId);
 			map.put("userName", userName);
-<<<<<<< HEAD
-			System.out.println(userId + " <-userid");
+
 			System.out.println(userId + " <-userid");
 			result = session.update("UserMapper.setUserInfo", map);
-=======
-			System.out.println(userId+" <-userid");
-			result =  session.update("UserMapper.setUserInfo", map );
->>>>>>> 09b4c245f0f970a5976555b72a096b9d58cf8be6
 			session.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
