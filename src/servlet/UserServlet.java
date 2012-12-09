@@ -13,41 +13,42 @@ import dao.UserDAO;
 import dto.UserDTO;
 
 @WebServlet("/user")
-public class UserServlet extends HttpServlet{
+public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	String actionUrl = "";
+
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = null;
-		String op= request.getParameter("op");
-		if(op.equals("sessionInvalidation")){
+		String op = request.getParameter("op");
+		if (op.equals("sessionInvalidation")) {
 			session = request.getSession();
 			session.invalidate();
 			actionUrl = "/main?op=main";
 		}
-		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher(actionUrl);
 		dispatcher.forward(request, response);
 	}
-	
+
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String op= request.getParameter("op");
-		String searchValue= request.getParameter("searchValue");
-		String id= "1";
-		if(op.equals("searchView")){
+		String op = request.getParameter("op");
+		String searchValue = request.getParameter("searchValue");
+		String id = "1";
+		if (op.equals("searchView")) {
 			UserDTO user = UserDAO.getUsers(id);
+			System.out.println(user.getId());
 			request.setAttribute("uDTO", user);
 			actionUrl = "/pages/test.jsp";
-		
+
 		}
-		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher(actionUrl);
 		dispatcher.forward(request, response);
 	}
-	
 
 }
