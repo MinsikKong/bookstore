@@ -10,11 +10,6 @@
 	BookDTO recentBook = BookDAO.getRecentBook();
 %>
 
-
-<%
-	
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,7 +64,7 @@
 						</h3>
 						<p>
 							<%
-								out.println(recentBook.getExplain());
+								out.println(recentBook.getIntroduction());
 							%>
 						</p>
 					</div>

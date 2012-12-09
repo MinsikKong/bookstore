@@ -12,10 +12,10 @@
 <body>
 	<%
 		BlogServlet test1 = new BlogServlet();
-			UserDTO dto = test1.getUser();
-			System.out.println(test1);
-			System.out.println(dto);
-			System.out.println(dto.getId());
+		UserDTO dto = test1.getUser();
+		System.out.println(test1);
+		System.out.println(dto);
+		System.out.println(dto.getId());
 	%>
 </body>
 </html>

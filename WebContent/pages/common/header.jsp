@@ -19,14 +19,14 @@
 				<ul class="nav">
 					<%
 						for (String[] menuItem : menu) {
-						 if (currentMenu != null && currentMenu.equals(menuItem[1])) {
-						   out.println("<li class='active'>");
-							 } else {
-							    out.println("<li class=''>");
-							 }
-						   out.println("<a href='" + menuItem[0] + "'>" + menuItem[1]+ "</a>");
-						   out.println("</li>");
-						}
+												 if (currentMenu != null && currentMenu.equals(menuItem[1])) {
+												   out.println("<li class='active'>");
+													 } else {
+													    out.println("<li class=''>");
+													 }
+												   out.println("<a href='" + menuItem[0] + "'>" + menuItem[1]+ "</a>");
+												   out.println("</li>");
+												}
 					%>
 				</ul>
 			</div>
@@ -60,8 +60,7 @@
 							<%
 								System.out.println(session.getAttribute("userName"));
 							%>
-							${me.id}
-							${me.name} <a href="user?op=sessionInvalidation"
+							${me.id} ${me.name} <a href="user?op=sessionInvalidation"
 								class="btn btn-primary"> 로그아웃</a>
 						</form>
 					</c:otherwise>

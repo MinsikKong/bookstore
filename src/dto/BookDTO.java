@@ -8,14 +8,14 @@ public class BookDTO {
 	String quantity = "";
 	String price = "";
 	int totalPrice = 0;
-	String Explain = "";
+	String introduction = "";
 
-	public String getExplain() {
-		return Explain;
+	public String getIntroduction() {
+		return introduction;
 	}
 
-	public void setExplain(String Explain) {
-		this.Explain = Explain;
+	public void setIntroduction(String introduction) {
+		this.introduction = introduction;
 	}
 
 	public String getIsbn() {
