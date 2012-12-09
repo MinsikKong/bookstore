@@ -100,6 +100,8 @@
 					</div>
 				</div>
 			</div>
+			</div>
+			</div>
 
 			<!-- include footer -->
 			<jsp:include page="/pages/common/footer.jsp" />
