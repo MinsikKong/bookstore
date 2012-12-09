@@ -2,6 +2,12 @@ package dto;
 
 public class PurchaseDTO {
 	String name ="";
+	String title = "";
+	String seller = "";
+	String introduction = "";
+	String status = "";
+	String idx = "";
+	String id  ="";
 	String postalcode ="";
 	String addressline1 ="";
 	String addressline2 ="";
@@ -9,6 +15,42 @@ public class PurchaseDTO {
 	String cardNumber ="";
 	String price ="";
 	
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getSeller() {
+		return seller;
+	}
+	public void setSeller(String seller) {
+		this.seller = seller;
+	}
+	public String getIntroduction() {
+		return introduction;
+	}
+	public void setIntroduction(String introduction) {
+		this.introduction = introduction;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getIdx() {
+		return idx;
+	}
+	public void setIdx(String idx) {
+		this.idx = idx;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getPrice() {
 		return price;
 	}

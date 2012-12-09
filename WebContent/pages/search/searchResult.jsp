@@ -35,56 +35,23 @@
 				<!-- plz don't delete this div-->
 				<div></div>
 
-				<div class="search-result-sort">
-					<ul class="nav nav-pills">
-						<li class="active"><a href="#">링크가 필요할까</a></li>
-
-						<li class="dropdown"><a class="dropdown-toggle"
-							id="sort-by-reg-date" role="button" data-toggle="dropdown"
-							href="#">등록일순 <b class="caret"></b>
-								<ul id="menu1" class="dropdown-menu" role="menu">
-									<li><a tabindex="-1" href="#">등록일 내림차순↓</a></li>
-									<li><a tabindex="-1" href="#">등록일 오름차순↑</a></li>
-								</ul></li>
-
-						<li class="dropdown"><a class="dropdown-toggle"
-							id="sort-by-price" role="button" data-toggle="dropdown" href="#">가격순
-								<b class="caret"></b>
-								<ul id="menu2" class="dropdown-menu" role="menu">
-									<li><a tabindex="-1" href="#">등록일 내림차순↓</a></li>
-									<li><a tabindex="-1" href="#">등록일 오름차순↑</a></li>
-								</ul></li>
-
-						<li class="dropdown"><a class="dropdown-toggle" id="drop5"
-							role="button" data-toggle="dropdown" href="#">책 상태순<b
-								class="caret"></b></a>
-							<ul id="menu3" class="dropdown-menu" role="menu">
-								<li><a tabindex="-1" href="#">등록일 내림차순↓</a></li>
-								<li><a tabindex="-1" href="#">등록일 오름차순↑</a></li>
-							</ul></li>
-					</ul>
-				</div>
 				<!-- Right bottom -->
-			<c:forEach begin="1" end="2" step="1">
-			<div class="marginBottom">
-					<div>도서</div>
-					<div>
-						<div class="float_style">
-							<img src="/book/img/trade/bookImg.jpg" alt="책이미지" class="img_size"/>
+				<c:forEach var="searchBook" items="${sDto}">
+					<div class="marginBottom">
+							<div>도서</div>
+							<div>
+								<div class="float_style">
+									<img src="/book/img/trade/bookImg.jpg" alt="책이미지" class="img_size"/>
+								</div>
+								<div class="contentsLine contentsSpace">
+									<a href="/book/trade?op=sellerView&isbn=${searchBook.isbn}" >제목 : ${searchBook.title}</a> <br />
+									 저자 :${searchBook.author} <br /> 
+									<DEL>판매가 : ${searchBook.price}</DEL> <!-- 중고 최저가: 5000원 --><br />
+									 설명 : <br/>
+									  ${searchBook.introduction}</div>
+							</div>
 						</div>
-						<div class="contentsLine contentsSpace">
-							<a href="/book/trade?op=sellerView" >제목 : 공민식은 왜 웹프를 하지 않는가</a> <br />
-							 저자 : 박현수 <br /> 
-							<DEL>판매가 : 10000원</DEL> 중고 최저가: 5000원<br />
-							 판매자수: 10명 <br />
-							 설명 : <br/>
-							 아무리 엄청난 내용을 써도 150height가 넘어가는 순간 
-							 자바스크립트를 통해 여행을 떠나고 말지요.아무리 엄청난 
-							 내용을 써도 150height가 넘어가는 순간 자바스크립트를 통해
-							  여행을 떠나고 말지요.</div>
-					</div>
-				</div>
-				</c:forEach>
+					</c:forEach>
 			</div>
 
 			<!-- 3 -->

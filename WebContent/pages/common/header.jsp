@@ -32,7 +32,7 @@
 			</div>
 			<div>
 				<form class="navbar-form pull-left"
-					action="/book/user?op=searchView" name="searchForm" method="post">
+					action="/book/search?op=searchView" name="searchForm" method="post">
 					<input type="text" class="span2 search-query" name="searchValue"
 						placeholder="검색어" />
 					<!-- <button type="submit" class="btn btn-info">검색</button> -->

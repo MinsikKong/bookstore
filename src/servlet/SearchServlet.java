@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import util.ChangeUtil;
+import dao.BookDAO;
+import dto.BookDTO;
 
 @WebServlet("/search")
 public class SearchServlet extends HttpServlet {
@@ -38,6 +41,11 @@ public class SearchServlet extends HttpServlet {
 		String actionUrl = "";
 		try {
 			if(op.equals("searchView")||op.equals("")){
+				request.setCharacterEncoding("UTF-8");
+				String sValue = ChangeUtil.getStringParameter(request.getParameter("searchValue"),"");
+				List<BookDTO> results = BookDAO.bookSearch(sValue);
+				
+				request.setAttribute("sDto", results);
 				actionUrl = "pages/search/searchResult.jsp";
 			}
 		} catch (Exception e) {

@@ -44,18 +44,24 @@
 						</div>
 						<div class="only_child_float contentsSpace">
 							<div>
-								<a href="/book/trade?op=sellerView">제목 : 공민식은 왜 웹프를 하지 않는가</a>
+								<a href="/book/trade?op=sellerView">제목 : ${bDto.title}</a>
 							</div>
-							<div>저자 : 박현수</div>
 
-							<!-- 정가는 디비에서 -->
-							<div>정가 : 10000원</div>
 
 							<!-- 판매자가 올린 가격도 디비에서 -->
-							<div>판매가: 5000원</div>
-
+							<div>판매가: ${bDto.price}</div>
+							<div>상태: ${bDto.status}</div>
 						</div>
 					</div>
+				</div>
+				
+				<div>
+				<div class="float_style">판매자:  ${bDto.seller}</div>
+				<div><a href="/user?op=addFriend&id= ${bDto.id}" class="btn btn-primary">친구 추가하기</a></div>
+				<div>
+					판매자의 말 <br />
+					${bDto.introduction}
+				</div>
 				</div>
 				<form class="form-horizontal" name="purchaseForm" method="post" action = "/book/trade?op=purchase">
 					<div class="shipping_info">

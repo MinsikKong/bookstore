@@ -3,6 +3,14 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="UserMapper">
+<resultMap id="getSeller" type="dto.BookDTO">
+		<result property="seller" column="name" javaType="java.lang.String" />
+		<result property="price" column="sell_price" javaType="java.lang.String" />
+		<result property="status" column="book_status" javaType="java.lang.String" />
+		<result property="introduction" column="contents" javaType="java.lang.String" />
+		<result property="idx" column="IDX" javaType="java.lang.String" />
+	</resultMap>
+	
 	<select id="selectUser" parameterType="String" resultType="dto.UserDTO">
 		select id from user_info where id = #{searchValue}
 	</select>
@@ -15,5 +23,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="isUser" parameterType="String" resultType="Integer">
 		select
 		count(*) from user_info where id = #{userId}
+	</select>
+	
+	<select id="getSeller" parameterType="String" resultMap="getSeller">
+	select a.name,b.sell_price,b.book_status,b.contents,b.idx from user_info a, sell_book_list b where a.id = b.id and b.isbn=#{isbn}
+		
+		
 	</select>
 </mapper>

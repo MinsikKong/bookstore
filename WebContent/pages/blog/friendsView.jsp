@@ -45,25 +45,8 @@
 
 			<!--Body content-->
 			<div class="span10">
+
 				<!-- RightTop -->
-				<div>
-					<div>나와 친구하고 싶어하는 사용자들</div>
-					<div>
-							<form class="friend" name="friendForm" action="/book/friend" method="post">
-					<!-- RightTop -->
-					<div class="hero-unit">
-						나와 친구하고 싶어하는 사용자들</div>
-							
-							<c:forEach var="watingFriend" items="${fwLists}">
-								<div>
-									<a href="main?op=blog"> 공민식</a> <a href="#"
-										onclick="acceptCheck('1')" class="btn btn-primary">수락</a> <a
-										href="#" onclick="refusalcheck('1')" class="btn btn-danger">거부</a>
-								</div>
-							</c:forEach>
-							<input type="hidden" id="friendOp" name="op" value="" /> <input
-								type="hidden" id="friendId" name="friendId" value="" />
-						</form>
 						<form class="friend" name="friendForm" action="/book/friend"
 							method="post">
 							<!-- RightTop -->
@@ -99,8 +82,6 @@
 						</form>
 					</div>
 				</div>
-			</div>
-			</div>
 			</div>
 
 			<!-- include footer -->

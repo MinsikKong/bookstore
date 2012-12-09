@@ -12,11 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import util.ChangeUtil;
+import dao.BookDAO;
 import dao.FriendDAO;
 import dao.TradeDAO;
+import dao.UserDAO;
 import dto.BookDTO;
 import dto.PurchaseDTO;
 import dto.SellDTO;
+import dto.UserDTO;
 
 @WebServlet("/trade")
 public class TradeServlet extends HttpServlet{
@@ -51,12 +54,23 @@ public class TradeServlet extends HttpServlet{
 			}else if(op.equals("cartView")){
 				actionUrl = "pages/trade/cartView.jsp";
 			}else if(op.equals("sellerView")){
+				String isbn = ChangeUtil.getStringParameter(request.getParameter("isbn"),"");
+				System.out.println("여기");
+				BookDTO result = BookDAO.getBookWithISBN(isbn);
+				List<UserDTO> sellers = UserDAO.getSeller(isbn);
+				request.setAttribute("searchBook", result);
+				request.setAttribute("sellers", sellers);
 				actionUrl = "pages/trade/sellerView.jsp";
 			}else if(op.equals("bookReg")){
 				int fCount = 0;
 				fCount = FriendDAO.getFriendsCount((String)session.getAttribute("userId"));
 				request.setAttribute("fCount", fCount);
 				actionUrl = "pages/trade/bookReg.jsp";
+			}else if(op.equals("purchaseView")){
+				String sellContentIdx = ChangeUtil.getStringParameter(request.getParameter("sellContentIdx"),"");
+				PurchaseDTO result = BookDAO.getPurchaseInfo(sellContentIdx);
+				request.setAttribute("bDto", result);
+				actionUrl = "pages/trade/purchaseView.jsp";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
